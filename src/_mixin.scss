@@ -1,0 +1,17 @@
+/* 字体大小 rem 单位兼容 */
+@mixin font-size ($px) {
+  font-size: #{$px}px;
+  font-size: #{$px}rem;
+}
+/* button 样式复用模块 */
+@mixin button-style ($face-color, $bg-color) {
+  &:hover{
+    color: #{$bg-color};
+    background-color: #{$face-color};
+  }
+  &, &:active{
+    color: #{$face-color};
+    border-color: #{$face-color};
+    background-color: #{$bg-color};
+  }
+}

@@ -1,0 +1,258 @@
+/**
+ * Some of the styles come from https://github.com/necolas/normalize.css (@necolas)
+ * Author: kiccer
+**/
+
+/* 外部资源 */
+@import "./_mixin.scss";
+
+/* 所有元素初始化 */
+*{
+	border: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	list-style-type: none;
+	text-decoration: none;
+	font: inherit;
+	line-height: inherit;
+	color: inherit;
+	background-color: transparent;
+	vertical-align: inherit;
+	text-align: inherit;
+}
+/* rem单位参考，可以直接用rem作为单位，无需做换算处理，一般用于移动端 */
+/* rem只参考根元素的font-size，即html，body设置了font-size不会影响 */
+html{
+  font-size: 1px;
+  background-color: #fff;
+  text-size-adjust: 100%;
+}
+body{
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Avenir', 'Microsoft YaHei', 'Monaco', 'Consolas';
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  vertical-align: baseline;
+  text-align: left;
+  /* qq浏览器内核兼容机制，为了在移动设备上，防止部分文本内容被放大字体(去除字体在手机qq浏览器中迷之放大的BUG) */
+  *{ max-height: 999999999999px; }
+}
+
+/* from normalize.css */
+main{ display: block; }
+
+/* from normalize.css */
+h1{ font-size: 2em; }
+
+hr{
+  display: block;
+  width: 100%;
+  background-color: currentColor;
+  margin: 10px 0;
+  height: 1px;
+  overflow: visible;
+}
+
+a{
+  color: #007cff;
+  text-decoration: none;
+  background-color: transparent;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+/* from normalize.css */
+abbr[title]{
+  border-bottom: none;
+  text-decoration: underline dotted;
+}
+
+/* from normalize.css */
+b, strong{ font-weight: bolder; }
+
+/* from normalize.css */
+pre, code, kbd, samp{
+  font-family: monospace;
+  font-size: 1em;
+}
+
+/* from normalize.css */
+small{ font-size: 80%; }
+
+sub, sup{
+	display: inline-block;
+	margin-left: -0.4em;
+}
+sub{
+	vertical-align: bottom;
+	transform: scale(0.6) translate(0.3em, 0.35em);
+}
+sup{
+	vertical-align: top;
+	transform: scale(0.6) translate(0.3em, -0.35em);
+}
+
+/* from normalize.css */
+fieldset{ padding: 0.35em 0.75em 0.625em; }
+
+legend{
+  display: table;
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* from normalize.css */
+progress{ vertical-align: baseline; }
+
+/* from normalize.css */
+textarea{ overflow: auto; }
+
+/* from normalize.css */
+[type=number]{
+  &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+    height: auto;
+  }
+}
+
+/* from normalize.css */
+[type="search"]{
+  appearance: textfield;
+  outline-offset: -2px;
+}
+
+/* from normalize.css */
+[type="search"]::-webkit-search-decoration{ appearance: none; }
+
+/* from normalize.css */
+::-webkit-file-upload-button{ appearance: button; }
+
+/* from normalize.css */
+details{ display: block; }
+
+/* from normalize.css */
+summary{ display: list-item; }
+
+/* from normalize.css */
+template, [hidden]{ display: none; }
+
+/* 块级img可以除去底部迷之margin，宽高auto兼容IE中设置单独宽或高，图片不会同比例缩放问题 */
+img{
+  display: block;
+  width: auto;
+  height: auto;
+  /* from normalize.css */
+  border-style: none;
+}
+
+table{
+  border-spacing: 0px 0px;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  th{
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+select{ text-transform: none; }
+
+button, [type=button], [type=reset], [type=submit]{
+  line-height: 1;
+  text-align: center;
+  padding: 3px 6px;
+  border-radius: 4px;
+  user-select: none;
+  border: 1px solid #2C3E50;
+  outline: none;
+  appearance: button;
+  text-transform: none;
+  &:hover{
+  	cursor: pointer;
+    background-color: #2C3E50;
+    color: #fff;
+  }
+  &, &:active{
+    color: #2C3E50;
+    background-color: #fff;
+  }
+  /* Meaningful */
+  &.primary{ @include button-style(#1a7fd2, #fff) }
+  &.success{ @include button-style(#04a000, #fff) }
+  &.error{ @include button-style(#ca0000, #fff) }
+  &.warning{ @include button-style(#F4BD00, #fff) }
+  /* disabled */
+  &[disabled]{
+    border-color: #b5b5b5;
+  	background-color: #b5b5b5;
+  	color: #e2e2e2;
+  	cursor: not-allowed;
+  }
+}
+
+/* 清除浮动 */
+.clear:after{
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* 文本溢出显示省略号 */
+.ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* 多行文本溢出显示省略号 不兼容IE(Tip: not IE) */
+.mult-ellipsis{
+  /* 只有 -webkit-box 有效，flex 无效 */
+	display: -webkit-box;
+	/*! autoprefixer: ignore next */
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+
+/* 不支持火狐，IE 和 Chrome 下显示有差异 */
+/* 文字自动两端对齐 (趣味样式，仅供体验，不保证兼容) */
+.justify {
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  text-align-last: justify;
+	height: 1em;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0){
+  .justify:after{
+    content: "";
+    display:  inline-block;
+    width: 100%;
+    overflow: hidden;
+    height: 0;
+  }
+}
+
+/* IE10+ */
+/* PS透明背景效果 (趣味样式，仅供体验，不保证兼容) */
+.ps-bg{
+	background: linear-gradient(to top right, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),
+              linear-gradient(to top right, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+	background-size: 20px 20px;
+	background-position: 0px 0px, 10px 10px;
+}
+
+/* IE10+ */
+/* 蚂蚁线效果 (趣味样式，仅供体验，不保证兼容) */
+.ant-line{
+	border: 1px solid transparent;
+	background: linear-gradient(white,white) padding-box,
+              repeating-linear-gradient( -45deg, currentColor 0%, currentColor 25%, white 0%, white 50%) 0 / 8.4px 8.4px;
+	animation: antLine 0.5s linear infinite;
+}
+@keyframes antLine { to { background-position: 8.4px; } }
