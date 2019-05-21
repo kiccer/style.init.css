@@ -11,20 +11,212 @@
     h1{
       text-align: center;
     }
+    .thanks{
+      text-align: right;
+      padding: 0 10px;
+      margin-bottom: 60px;
+    }
     main{
       max-width: 1200px;
       margin: auto;
       min-height: 100px;
+      padding: 0 20px;
+    }
+    h2{
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+    pre{
+      margin-bottom: 60px;
+    }
+    ul{
+      padding-left: 20px;
+      margin-bottom: 60px;
+    }
+    li{
+      margin-bottom: 5px;
+    }
+    table{
+      margin-bottom: 60px;
+    }
+    td{
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    td:nth-of-type(n + 2){
+      text-align: left;
+    }
+    p{ margin-bottom: 15px; }
+    p[class*=p]{
+      border: 1px solid #ccc;
+      padding: 3px;
+      border-radius: 3px;
+    }
+    p.p1{ width: 200px; }
+    p.p2{ width: 300px; }
+    p.p3{ width: 400px; }
+    p.p4{ width: 500px; }
+    p.subp{
+      display: inline-block;
+      border: 1px solid #ccc;
+    }
+    .box{
+      height: 200px;
+      margin-bottom: 10px;
+    }
+    small:before{
+      content: " - ";
     }
   </style>
 </head>
 <body>
 
-  <h1>Style Demo</h1>
-  <hr>
+  <h1>Style.init.css Demo</h1><hr>
+
+  <p class="thanks">
+    <small>Thanks for <a href="https://github.com/necolas/normalize.css" target="_blank">normalize.css</a>.</small>
+  </p>
+
   <main>
 
+    <h2>NPM</h2>
+    <pre>npm install --save style.init.css</pre>
 
+    <h2>Use</h2>
+    <pre>import "style.init.css";<br>// or<br>&lt;script src="./style.init.css"&gt;&lt;/script&gt;</pre>
+
+    <h2>项目描述</h2>
+    <ul>
+      <li>项目使用 <code>postcss</code> 插件实现样式兼容，可供日常项目开发使用。</li>
+      <li>部分样式参考 <code>normalize.css</code></li>
+      <li>有好的提议可以在 <code>Issues</code> 反馈给我，我会很乐意采纳。</li>
+    </ul>
+
+    <h2>Project description<sup><a href="https://fanyi.baidu.com" target="_blank">百度翻译</a></sup></h2>
+    <ul>
+      <li>The project uses <code>postcss</code> plug-in to achieve style compatibility, which can be used in daily project development.</li>
+      <li>Some styles refer to <code>normalize.css</code></li>
+      <li>There are good suggestions that can be fed back to me at <code>Issues</code>, and I will be happy to adopt them.</li>
+    </ul>
+
+    <h2>Buttons</h2>
+    <table>
+      <tr>
+        <td>Button</td>
+        <td>Code</td>
+      </tr>
+      <tr>
+        <td><button>normal</button></td>
+        <td>
+          <code>
+            &lt;button&gt;normal&lt;/button&gt;
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><button class="btn-primary">primary</button></td>
+        <td>
+          <code>
+            &lt;button class="btn-primary"&gt;primary&lt;/button&gt;
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><button class="btn-success">success</button></td>
+        <td>
+          <code>
+            &lt;button class="btn-success"&gt;success&lt;/button&gt;
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><button class="btn-warning">warning</button></td>
+        <td>
+          <code>
+            &lt;button class="btn-warning"&gt;warning&lt;/button&gt;
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><button class="btn-error">error</button></td>
+        <td>
+          <code>
+            &lt;button class="btn-error"&gt;error&lt;/button&gt;
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><button disabled>disabled</button></td>
+        <td>
+          <code>
+            &lt;button disabled&gt;disabled&lt;/button&gt;
+          </code>
+        </td>
+      </tr>
+    </table>
+
+    <h2>.ellipsis</h2>
+    <p class="p1 ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
+    </p>
+    <p class="p2 ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
+    </p>
+    <p class="p3 ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
+    </p>
+    <p class="p4 ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
+    </p>
+    <pre>&lt;p class="ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+
+    <h2>.mult-ellipsis<small>not IE</small></h2>
+    <p class="p1 mult-ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
+    </p>
+    <p class="p2 mult-ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
+    </p>
+    <p class="p3 mult-ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
+    </p>
+    <p class="p4 mult-ellipsis">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
+    </p>
+    <pre>&lt;p class="mult-ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+
+    <h2>.justify<small>No support for Firefox, IE and Chrome show differences</small></h2>
+    <p class="p1 justify">测试文本</p>
+    <p class="p2 justify">测试文本</p>
+    <p class="p3 justify">测试文本</p>
+    <p class="p4 justify">测试文本</p>
+    <pre>&lt;p class="justify"&gt;测试文本&lt;/p&gt;</pre>
+
+    <h2>.ps-bg<small>Just for experience</small></h2>
+    <div class="box ps-bg"></div>
+    <pre>&lt;div class="ps-bg"&gt;&lt;/div&gt;</pre>
+
+    <h2>.ant-line<small>Just for experience</small></h2>
+    <div class="box ant-line"></div>
+    <pre>&lt;div class="ant-line"&gt;&lt;/div&gt;</pre>
+
+    <h2>sub, sup</h2>
+    <p class="subp">
+      English<sub>en</sub><!--
+      -->English<sup>en</sup><!--
+      -->English<sub>long text long text long text long text</sub>
+    </p><br>
+    <p class="subp">
+      123<sub>456</sub><!--
+      -->123<sup>456</sup><!--
+      -->123<sub>3.1415926535897932384626433832795028841971</sub>
+    </p><br>
+    <p class="subp">
+      中文<sub>测试</sub><!--
+      -->中文<sup>测试</sup><!--
+      -->中文<sub>长文本长文本长文本长文本长文本长文本长文本长文本</sub>
+    </p>
 
   </main>
 

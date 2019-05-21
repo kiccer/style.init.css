@@ -82,26 +82,39 @@ b, strong {
 
 /* from normalize.css */
 pre, code, kbd, samp {
-  font-family: monospace;
-  font-size: 1em; }
+  font-size: 1em;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace; }
+
+pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  line-height: 1.45;
+  padding: 16px;
+  overflow: auto; }
+
+code {
+  display: inline-block;
+  line-height: 1;
+  background-color: #F3F4F4;
+  border-radius: 3px;
+  padding: .2em .4em; }
 
 /* from normalize.css */
 small {
   font-size: 80%; }
 
+/* from normalize.css */
 sub, sup {
-  display: inline-block;
-  margin-left: -0.4em; }
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
 
 sub {
-  vertical-align: bottom;
-  -webkit-transform: scale(0.6) translate(0.3em, 0.35em);
-          transform: scale(0.6) translate(0.3em, 0.35em); }
+  bottom: -0.25em; }
 
 sup {
-  vertical-align: top;
-  -webkit-transform: scale(0.6) translate(0.3em, -0.35em);
-          transform: scale(0.6) translate(0.3em, -0.35em); }
+  top: -0.5em; }
 
 /* from normalize.css */
 fieldset {
@@ -173,7 +186,7 @@ table {
 select {
   text-transform: none; }
 
-button, [type=button], [type=reset], [type=submit] {
+button, .btn, [type=button], [type=reset], [type=submit] {
   line-height: 1;
   text-align: center;
   padding: 3px 6px;
@@ -190,45 +203,45 @@ button, [type=button], [type=reset], [type=submit] {
   text-transform: none;
   /* Meaningful */
   /* disabled */ }
-  button:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover {
+  button:hover, .btn:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover {
     cursor: pointer;
     background-color: #2C3E50;
     color: #fff; }
-  button, button:active, [type=button], [type=button]:active, [type=reset], [type=reset]:active, [type=submit], [type=submit]:active {
+  button, button:active, .btn, .btn:active, [type=button], [type=button]:active, [type=reset], [type=reset]:active, [type=submit], [type=submit]:active {
     color: #2C3E50;
     background-color: #fff; }
-  button.primary:hover, [type=button].primary:hover, [type=reset].primary:hover, [type=submit].primary:hover {
+  button.btn-primary:hover, .btn.btn-primary:hover, [type=button].btn-primary:hover, [type=reset].btn-primary:hover, [type=submit].btn-primary:hover {
     color: #fff;
     background-color: #1a7fd2; }
-  button.primary, button.primary:active, [type=button].primary, [type=button].primary:active, [type=reset].primary, [type=reset].primary:active, [type=submit].primary, [type=submit].primary:active {
+  button.btn-primary, button.btn-primary:active, .btn.btn-primary, .btn.btn-primary:active, [type=button].btn-primary, [type=button].btn-primary:active, [type=reset].btn-primary, [type=reset].btn-primary:active, [type=submit].btn-primary, [type=submit].btn-primary:active {
     color: #1a7fd2;
     border-color: #1a7fd2;
     background-color: #fff; }
-  button.success:hover, [type=button].success:hover, [type=reset].success:hover, [type=submit].success:hover {
+  button.btn-success:hover, .btn.btn-success:hover, [type=button].btn-success:hover, [type=reset].btn-success:hover, [type=submit].btn-success:hover {
     color: #fff;
     background-color: #04a000; }
-  button.success, button.success:active, [type=button].success, [type=button].success:active, [type=reset].success, [type=reset].success:active, [type=submit].success, [type=submit].success:active {
+  button.btn-success, button.btn-success:active, .btn.btn-success, .btn.btn-success:active, [type=button].btn-success, [type=button].btn-success:active, [type=reset].btn-success, [type=reset].btn-success:active, [type=submit].btn-success, [type=submit].btn-success:active {
     color: #04a000;
     border-color: #04a000;
     background-color: #fff; }
-  button.error:hover, [type=button].error:hover, [type=reset].error:hover, [type=submit].error:hover {
+  button.btn-error:hover, .btn.btn-error:hover, [type=button].btn-error:hover, [type=reset].btn-error:hover, [type=submit].btn-error:hover {
     color: #fff;
     background-color: #ca0000; }
-  button.error, button.error:active, [type=button].error, [type=button].error:active, [type=reset].error, [type=reset].error:active, [type=submit].error, [type=submit].error:active {
+  button.btn-error, button.btn-error:active, .btn.btn-error, .btn.btn-error:active, [type=button].btn-error, [type=button].btn-error:active, [type=reset].btn-error, [type=reset].btn-error:active, [type=submit].btn-error, [type=submit].btn-error:active {
     color: #ca0000;
     border-color: #ca0000;
     background-color: #fff; }
-  button.warning:hover, [type=button].warning:hover, [type=reset].warning:hover, [type=submit].warning:hover {
+  button.btn-warning:hover, .btn.btn-warning:hover, [type=button].btn-warning:hover, [type=reset].btn-warning:hover, [type=submit].btn-warning:hover {
     color: #fff;
     background-color: #F4BD00; }
-  button.warning, button.warning:active, [type=button].warning, [type=button].warning:active, [type=reset].warning, [type=reset].warning:active, [type=submit].warning, [type=submit].warning:active {
+  button.btn-warning, button.btn-warning:active, .btn.btn-warning, .btn.btn-warning:active, [type=button].btn-warning, [type=button].btn-warning:active, [type=reset].btn-warning, [type=reset].btn-warning:active, [type=submit].btn-warning, [type=submit].btn-warning:active {
     color: #F4BD00;
     border-color: #F4BD00;
     background-color: #fff; }
-  button[disabled], [type=button][disabled], [type=reset][disabled], [type=submit][disabled] {
-    border-color: #b5b5b5;
-    background-color: #b5b5b5;
-    color: #e2e2e2;
+  button[disabled], .btn[disabled], [type=button][disabled], [type=reset][disabled], [type=submit][disabled] {
+    border-color: #dcdcdc;
+    background-color: #dcdcdc;
+    color: #f9f9f9;
     cursor: not-allowed; }
 
 /* 清除浮动 */
@@ -259,7 +272,10 @@ button, [type=button], [type=reset], [type=submit] {
   text-justify: distribute-all-lines;
   -moz-text-align-last: justify;
        text-align-last: justify;
-  height: 1em; }
+  padding: 0;
+  height: 20px;
+  font-size: 14px;
+  line-height: calc(20px - 3px * 2); }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .justify:after {

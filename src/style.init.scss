@@ -78,25 +78,38 @@ b, strong{ font-weight: bolder; }
 
 /* from normalize.css */
 pre, code, kbd, samp{
-  font-family: monospace;
   font-size: 1em;
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+}
+
+pre{
+	background-color: #f6f8fa;
+	border-radius: 3px;
+	line-height: 1.45;
+	padding: 16px;
+	overflow: auto;
+}
+
+code{
+	display: inline-block;
+	line-height: 1;
+	background-color: #F3F4F4;
+	border-radius: 3px;
+	padding: .2em .4em;
 }
 
 /* from normalize.css */
 small{ font-size: 80%; }
 
+/* from normalize.css */
 sub, sup{
-	display: inline-block;
-	margin-left: -0.4em;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
-sub{
-	vertical-align: bottom;
-	transform: scale(0.6) translate(0.3em, 0.35em);
-}
-sup{
-	vertical-align: top;
-	transform: scale(0.6) translate(0.3em, -0.35em);
-}
+sub{ bottom: -0.25em; }
+sup{ top: -0.5em; }
 
 /* from normalize.css */
 fieldset{ padding: 0.35em 0.75em 0.625em; }
@@ -163,7 +176,7 @@ table{
 
 select{ text-transform: none; }
 
-button, [type=button], [type=reset], [type=submit]{
+button, .btn, [type=button], [type=reset], [type=submit]{
   line-height: 1;
   text-align: center;
   padding: 3px 6px;
@@ -183,15 +196,15 @@ button, [type=button], [type=reset], [type=submit]{
     background-color: #fff;
   }
   /* Meaningful */
-  &.primary{ @include button-style(#1a7fd2, #fff) }
-  &.success{ @include button-style(#04a000, #fff) }
-  &.error{ @include button-style(#ca0000, #fff) }
-  &.warning{ @include button-style(#F4BD00, #fff) }
+  &.btn-primary{ @include button-style(#1a7fd2, #fff) }
+  &.btn-success{ @include button-style(#04a000, #fff) }
+  &.btn-error{ @include button-style(#ca0000, #fff) }
+  &.btn-warning{ @include button-style(#F4BD00, #fff) }
   /* disabled */
   &[disabled]{
-    border-color: #b5b5b5;
-  	background-color: #b5b5b5;
-  	color: #e2e2e2;
+    border-color: #dcdcdc;
+  	background-color: #dcdcdc;
+  	color: #f9f9f9;
   	cursor: not-allowed;
   }
 }
@@ -226,7 +239,10 @@ button, [type=button], [type=reset], [type=submit]{
   text-align: justify;
   text-justify: distribute-all-lines;
   text-align-last: justify;
-	height: 1em;
+	padding: 0;
+	height: 20px;
+	font-size: 14px;
+	line-height: calc(20px - 3px * 2);
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0){
   .justify:after{
