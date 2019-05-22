@@ -188,18 +188,23 @@ button, .btn, [type=button], [type=reset], [type=submit]{
   text-transform: none;
   &:hover{
   	cursor: pointer;
-    background-color: #2C3E50;
-    color: #fff;
+		color: #FFFFFF;
+		border-color: #2C3E50BF;
+    background-color: #2C3E50BF;
   }
-  &, &:active{
-    color: #2C3E50;
-    background-color: #fff;
+	&, &:active{
+		color: #FFFFFF;
+		border-color: #2C3E50;
+		background-color: #2C3E50;
   }
+	&:active{
+		box-shadow: inset 0 0 100vw rgba(0, 0, 0, .3);
+	}
   /* Meaningful */
-  &.btn-primary{ @include button-style(#1a7fd2, #fff) }
-  &.btn-success{ @include button-style(#04a000, #fff) }
-  &.btn-error{ @include button-style(#ca0000, #fff) }
-  &.btn-warning{ @include button-style(#F4BD00, #fff) }
+  &.btn-primary{ @include button-style(#FFFFFF, #1A7FD2) }
+  &.btn-success{ @include button-style(#FFFFFF, #04A000) }
+  &.btn-error{ @include button-style(#FFFFFF, #CA0000) }
+  &.btn-warning{ @include button-style(#FFFFFF, #F4BD00) }
   /* disabled */
   &[disabled]{
     border-color: #dcdcdc;
@@ -234,6 +239,7 @@ button, .btn, [type=button], [type=reset], [type=submit]{
 }
 
 /* 不支持火狐，IE 和 Chrome 下显示有差异 */
+/* 英文和数字中间空格隔开，IE 和 Chrome 的效果就会相同 */
 /* 文字自动两端对齐 (趣味样式，仅供体验，不保证兼容) */
 .justify {
   text-align: justify;

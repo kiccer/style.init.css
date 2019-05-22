@@ -1,7 +1,14 @@
 {
   "name": "style.init.css",
-  "version": "1.0.1",
   "description": "Page style initialization.",
+  "version": "1.0.2",
+  "version_short": "1.0",
+  "keywords": [
+    "css",
+    "sass",
+    "front-end",
+    "web"
+  ],
   "main": "./dist/style.init.css",
   "scripts": {
     "dev": "set NODE_ENV=development&& webpack --progress --colors --watch --mode=development",

@@ -40,7 +40,7 @@
     table{
       margin-bottom: 60px;
     }
-    td{
+    td, th{
       border: 1px solid #ccc;
       padding: 10px;
     }
@@ -84,7 +84,7 @@
     <pre>npm install --save style.init.css</pre>
 
     <h2>Use</h2>
-    <pre>import "style.init.css";<br>// or<br>&lt;script src="./style.init.css"&gt;&lt;/script&gt;</pre>
+    <pre>import 'style.init.css'<br>// or<br>&lt;link rel="stylesheet" href="./dist/style.init.min.css"&gt;</pre>
 
     <h2>项目描述</h2>
     <ul>
@@ -103,8 +103,8 @@
     <h2>Buttons</h2>
     <table>
       <tr>
-        <td>Button</td>
-        <td>Code</td>
+        <th>Button</th>
+        <th>Code</th>
       </tr>
       <tr>
         <td><button>normal</button></td>
@@ -192,6 +192,16 @@
     <p class="p3 justify">测试文本</p>
     <p class="p4 justify">测试文本</p>
     <pre>&lt;p class="justify"&gt;测试文本&lt;/p&gt;</pre>
+    <p class="p1 justify">E n g l i s h</p>
+    <p class="p2 justify">E n g l i s h</p>
+    <p class="p3 justify">E n g l i s h</p>
+    <p class="p4 justify">E n g l i s h</p>
+    <pre>&lt;p class="justify"&gt;E n g l i s h&lt;/p&gt; // Spaced by space</pre>
+    <p class="p1 justify">1 2 3 4 5 6 7 8 9</p>
+    <p class="p2 justify">1 2 3 4 5 6 7 8 9</p>
+    <p class="p3 justify">1 2 3 4 5 6 7 8 9</p>
+    <p class="p4 justify">1 2 3 4 5 6 7 8 9</p>
+    <pre>&lt;p class="justify"&gt;1 2 3 4 5 6 7 8 9&lt;/p&gt; // Spaced by space</pre>
 
     <h2>.ps-bg<small>Just for experience</small></h2>
     <div class="box ps-bg"></div>

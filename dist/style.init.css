@@ -205,39 +205,48 @@ button, .btn, [type=button], [type=reset], [type=submit] {
   /* disabled */ }
   button:hover, .btn:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover {
     cursor: pointer;
-    background-color: #2C3E50;
-    color: #fff; }
+    color: #FFFFFF;
+    border-color: #2C3E50BF;
+    background-color: #2C3E50BF; }
   button, button:active, .btn, .btn:active, [type=button], [type=button]:active, [type=reset], [type=reset]:active, [type=submit], [type=submit]:active {
-    color: #2C3E50;
-    background-color: #fff; }
+    color: #FFFFFF;
+    border-color: #2C3E50;
+    background-color: #2C3E50; }
+  button:active, .btn:active, [type=button]:active, [type=reset]:active, [type=submit]:active {
+    -webkit-box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3); }
   button.btn-primary:hover, .btn.btn-primary:hover, [type=button].btn-primary:hover, [type=reset].btn-primary:hover, [type=submit].btn-primary:hover {
-    color: #fff;
-    background-color: #1a7fd2; }
+    color: #FFFFFFEE;
+    border-color: #1A7FD2BF;
+    background-color: #1A7FD2BF; }
   button.btn-primary, button.btn-primary:active, .btn.btn-primary, .btn.btn-primary:active, [type=button].btn-primary, [type=button].btn-primary:active, [type=reset].btn-primary, [type=reset].btn-primary:active, [type=submit].btn-primary, [type=submit].btn-primary:active {
-    color: #1a7fd2;
-    border-color: #1a7fd2;
-    background-color: #fff; }
+    color: #FFFFFF;
+    border-color: #1A7FD2;
+    background-color: #1A7FD2; }
   button.btn-success:hover, .btn.btn-success:hover, [type=button].btn-success:hover, [type=reset].btn-success:hover, [type=submit].btn-success:hover {
-    color: #fff;
-    background-color: #04a000; }
+    color: #FFFFFFEE;
+    border-color: #04A000BF;
+    background-color: #04A000BF; }
   button.btn-success, button.btn-success:active, .btn.btn-success, .btn.btn-success:active, [type=button].btn-success, [type=button].btn-success:active, [type=reset].btn-success, [type=reset].btn-success:active, [type=submit].btn-success, [type=submit].btn-success:active {
-    color: #04a000;
-    border-color: #04a000;
-    background-color: #fff; }
+    color: #FFFFFF;
+    border-color: #04A000;
+    background-color: #04A000; }
   button.btn-error:hover, .btn.btn-error:hover, [type=button].btn-error:hover, [type=reset].btn-error:hover, [type=submit].btn-error:hover {
-    color: #fff;
-    background-color: #ca0000; }
+    color: #FFFFFFEE;
+    border-color: #CA0000BF;
+    background-color: #CA0000BF; }
   button.btn-error, button.btn-error:active, .btn.btn-error, .btn.btn-error:active, [type=button].btn-error, [type=button].btn-error:active, [type=reset].btn-error, [type=reset].btn-error:active, [type=submit].btn-error, [type=submit].btn-error:active {
-    color: #ca0000;
-    border-color: #ca0000;
-    background-color: #fff; }
+    color: #FFFFFF;
+    border-color: #CA0000;
+    background-color: #CA0000; }
   button.btn-warning:hover, .btn.btn-warning:hover, [type=button].btn-warning:hover, [type=reset].btn-warning:hover, [type=submit].btn-warning:hover {
-    color: #fff;
-    background-color: #F4BD00; }
+    color: #FFFFFFEE;
+    border-color: #F4BD00BF;
+    background-color: #F4BD00BF; }
   button.btn-warning, button.btn-warning:active, .btn.btn-warning, .btn.btn-warning:active, [type=button].btn-warning, [type=button].btn-warning:active, [type=reset].btn-warning, [type=reset].btn-warning:active, [type=submit].btn-warning, [type=submit].btn-warning:active {
-    color: #F4BD00;
+    color: #FFFFFF;
     border-color: #F4BD00;
-    background-color: #fff; }
+    background-color: #F4BD00; }
   button[disabled], .btn[disabled], [type=button][disabled], [type=reset][disabled], [type=submit][disabled] {
     border-color: #dcdcdc;
     background-color: #dcdcdc;
@@ -266,6 +275,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
   overflow: hidden; }
 
 /* 不支持火狐，IE 和 Chrome 下显示有差异 */
+/* 英文和数字中间空格隔开，IE 和 Chrome 的效果就会相同 */
 /* 文字自动两端对齐 (趣味样式，仅供体验，不保证兼容) */
 .justify {
   text-align: justify;

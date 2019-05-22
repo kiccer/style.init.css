@@ -6,12 +6,13 @@
 /* button 样式复用模块 */
 @mixin button-style ($face-color, $bg-color) {
   &:hover{
-    color: #{$bg-color};
-    background-color: #{$face-color};
+		color: #{$face-color}EE;
+		border-color: #{$bg-color}BF;
+    background-color: #{$bg-color}BF;
   }
   &, &:active{
-    color: #{$face-color};
-    border-color: #{$face-color};
-    background-color: #{$bg-color};
+		color: #{$face-color};
+    border-color: #{$bg-color};
+		background-color: #{$bg-color};
   }
 }
