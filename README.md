@@ -21,12 +21,12 @@ npm install --save style.init.css
 **Use**
 
 ```JavaScript
-// JavaScript
+// javascript
 import 'style.init.css'
 ```
 ```HTML
-<!-- HTML Label -->
-<link rel="stylesheet" href="./dist/style.init.min.css">
+<!-- html Label -->
+<link rel="stylesheet" href="./dist/style.init.min.css" />
 ```
 
 ## Project description
@@ -40,4 +40,4 @@ import 'style.init.css'
 
 * Some styles are for experience only, Compatibility is not ideal, for example: `.ps-bg`, `.ant-line`, etc.
 * `style.init.min.css`file is not necessarily up-to-date, you can run `npm run build` to build the latest compressed version.
-* `import "style.init.css"` default reference `style.init.css`
+* `import 'style.init.css'` default reference `style.init.css`
