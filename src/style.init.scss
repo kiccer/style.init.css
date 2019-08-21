@@ -1,13 +1,13 @@
 /**
- * Some of the styles come from https://github.com/necolas/normalize.css (@necolas)
+ * Style.init.css (Style initialization)
  * Author: kiccer
-**/
-
-/* 外部资源 */
+ * Website: https://github.com/kiccer/style.init.css
+ * Tip: Some of the styles come from https://github.com/necolas/normalize.css (@necolas)
+ */
 @import "./_mixin.scss";
 
 /* 所有元素初始化 */
-*{
+* {
 	border: 0;
 	margin: 0;
 	padding: 0;
@@ -24,65 +24,93 @@
 }
 /* rem单位参考，可以直接用rem作为单位，无需做换算处理，一般用于移动端 */
 /* rem只参考根元素的font-size，即html，body设置了font-size不会影响 */
-html{
-  font-size: 1px;
-  background-color: #fff;
-  text-size-adjust: 100%;
+html {
+	font-size: 1px;
+	background-color: #fff;
+	text-size-adjust: 100%;
 }
-body{
-  font-size: 14px;
-  font-weight: 400;
-  font-family: 'Avenir', 'Microsoft YaHei', 'Monaco', 'Consolas';
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-  vertical-align: baseline;
-  text-align: left;
-  /* qq浏览器内核兼容机制，为了在移动设备上，防止部分文本内容被放大字体(去除字体在手机qq浏览器中迷之放大的BUG) */
-  *{ max-height: 999999999999px; }
-}
-
-/* from normalize.css */
-main{ display: block; }
-
-/* from normalize.css */
-h1{ font-size: 2em; }
-
-hr{
-  display: block;
-  width: 100%;
-  background-color: currentColor;
-  margin: 10px 0;
-  height: 1px;
-  overflow: visible;
+body {
+	font-size: 14px;
+	font-weight: 400;
+	font-family: 'Avenir', 'Microsoft YaHei', 'Monaco', 'Consolas';
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #2c3e50;
+	vertical-align: baseline;
+	text-align: left;
+	/* qq浏览器内核兼容机制，为了在移动设备上，防止部分文本内容被放大字体(去除字体在手机qq浏览器中迷之放大的BUG) */
+	* { max-height: 999999999999px; }
 }
 
-a{
-  color: #007cff;
-  text-decoration: none;
-  background-color: transparent;
-  &:hover{
-    text-decoration: underline;
-  }
+main { display: block; }
+
+h1, h2, h3, h4, h5, h6 {
+	display: block;
+	font-weight: lighter;
 }
 
-/* from normalize.css */
-abbr[title]{
-  border-bottom: none;
-  text-decoration: underline dotted;
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
 }
 
-/* from normalize.css */
-b, strong{ font-weight: bolder; }
+h2 {
+	font-size: 1.5em;
+	margin: 0.83em 0;
+}
 
-/* from normalize.css */
-pre, code, kbd, samp{
-  font-size: 1em;
+h3 {
+	font-size: 1.17em;
+	margin: 1em 0;
+}
+
+h4 {
+	margin: 1.33em 0;
+}
+
+h5 {
+	font-size: 0.83em;
+	margin: 1.67em 0;
+}
+
+h6 {
+	font-size: 0.67em;
+	margin: 2.33em 0;
+}
+
+hr {
+	display: block;
+	width: 100%;
+	background-color: currentColor;
+	margin: 10px 0;
+	height: 1px;
+	overflow: visible;
+}
+
+a {
+	color: #007cff;
+	text-decoration: none;
+	background-color: transparent;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline dotted;
+}
+
+b, strong { font-weight: bolder; }
+
+pre, code, kbd, samp {
+	font-size: 1em;
 	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+	margin: 1em 0px;
 }
 
-pre{
+pre {
 	background-color: #f6f8fa;
 	border-radius: 3px;
 	line-height: 1.45;
@@ -90,7 +118,7 @@ pre{
 	overflow: auto;
 }
 
-code{
+code {
 	display: inline-block;
 	line-height: 1;
 	background-color: #F3F4F4;
@@ -98,139 +126,127 @@ code{
 	padding: .2em .4em;
 }
 
-/* from normalize.css */
-small{ font-size: 80%; }
+small { font-size: 80%; }
 
-/* from normalize.css */
 sub, sup{
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
-sub{ bottom: -0.25em; }
-sup{ top: -0.5em; }
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
 
-/* from normalize.css */
-fieldset{ padding: 0.35em 0.75em 0.625em; }
+fieldset { padding: 0.35em 0.75em 0.625em; }
 
-legend{
-  display: table;
-  max-width: 100%;
-  white-space: normal;
-}
-
-/* from normalize.css */
-progress{ vertical-align: baseline; }
-
-/* from normalize.css */
-textarea{ overflow: auto; }
-
-/* from normalize.css */
-[type=number]{
-  &::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
-    height: auto;
-  }
+legend {
+	display: table;
+	max-width: 100%;
+	white-space: normal;
 }
 
-/* from normalize.css */
-[type="search"]{
-  appearance: textfield;
-  outline-offset: -2px;
+progress { vertical-align: baseline; }
+
+textarea { overflow: auto; }
+
+[type=number] {
+	&::-webkit-inner-spin-button, ::-webkit-outer-spin-button{
+		height: auto;
+	}
 }
 
-/* from normalize.css */
-[type="search"]::-webkit-search-decoration{ appearance: none; }
+[type="search"] {
+	appearance: textfield;
+	outline-offset: -2px;
+}
 
-/* from normalize.css */
-::-webkit-file-upload-button{ appearance: button; }
+[type="search"]::-webkit-search-decoration { appearance: none; }
 
-/* from normalize.css */
-details{ display: block; }
+::-webkit-file-upload-button { appearance: button; }
 
-/* from normalize.css */
-summary{ display: list-item; }
+details { display: block; }
 
-/* from normalize.css */
-template, [hidden]{ display: none; }
+summary { display: list-item; }
+
+template, [hidden] { display: none; }
 
 /* 块级img可以除去底部迷之margin，宽高auto兼容IE中设置单独宽或高，图片不会同比例缩放问题 */
-img{
-  display: block;
-  width: auto;
-  height: auto;
-  /* from normalize.css */
-  border-style: none;
+img {
+	display: block;
+	width: auto;
+	height: auto;
+
+	border-style: none;
 }
 
-table{
-  border-spacing: 0px 0px;
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  th{
-    font-size: 16px;
-    font-weight: 700;
-  }
+table {
+	border-spacing: 0px 0px;
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	th {
+		font-size: 16px;
+		font-weight: 700;
+	}
 }
 
-select{ text-transform: none; }
+select { text-transform: none; }
 
-button, .btn, [type=button], [type=reset], [type=submit]{
-  line-height: 1;
-  text-align: center;
-  padding: 3px 6px;
-  border-radius: 4px;
-  user-select: none;
-  border: 1px solid #2C3E50;
-  outline: none;
-  appearance: button;
-  text-transform: none;
-  &:hover{
-  	cursor: pointer;
+button, .btn, [type=button], [type=reset], [type=submit] {
+	line-height: 1;
+	text-align: center;
+	padding: 3px 6px;
+	border-radius: 4px;
+	user-select: none;
+	border: 1px solid #2C3E50;
+	outline: none;
+	appearance: button;
+	text-transform: none;
+	&:hover {
+		cursor: pointer;
 		color: #FFFFFF;
 		border-color: #2C3E50BF;
-    background-color: #2C3E50BF;
-  }
-	&, &:active{
+		background-color: #2C3E50BF;
+	}
+	&, &:active {
 		color: #FFFFFF;
 		border-color: #2C3E50;
 		background-color: #2C3E50;
-  }
-	&:active{
-		box-shadow: inset 0 0 100vw rgba(0, 0, 0, .3);
 	}
-  /* Meaningful */
-  &.btn-primary{ @include button-style(#FFFFFF, #1A7FD2) }
-  &.btn-success{ @include button-style(#FFFFFF, #04A000) }
-  &.btn-error{ @include button-style(#FFFFFF, #CA0000) }
-  &.btn-warning{ @include button-style(#FFFFFF, #F4BD00) }
-  /* disabled */
-  &[disabled]{
-    border-color: #dcdcdc;
-  	background-color: #dcdcdc;
-  	color: #f9f9f9;
-  	cursor: not-allowed;
-  }
+	&:active {
+		box-shadow: inset 0 0 calc(100vw + 100vh) rgba(0, 0, 0, .3);
+	}
+	/* Meaningful */
+	&.btn-primary { @include button-style(#FFFFFF, #1A7FD2) }
+	&.btn-success { @include button-style(#FFFFFF, #04A000) }
+	&.btn-error { @include button-style(#FFFFFF, #CA0000) }
+	&.btn-warning { @include button-style(#FFFFFF, #F4BD00) }
+	/* disabled */
+	&[disabled] {
+		border-color: #dcdcdc;
+		background-color: #dcdcdc;
+		color: #f9f9f9;
+		cursor: not-allowed;
+	}
 }
 
 /* 清除浮动 */
-.clear:after{
-  display: block;
-  content: "";
-  clear: both;
+.clear:after {
+	display: block;
+	content: "";
+	clear: both;
 }
 
 /* 文本溢出显示省略号 */
-.ellipsis{
+.ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
 
 /* 多行文本溢出显示省略号 不兼容IE(Tip: not IE) */
-.mult-ellipsis{
-  /* 只有 -webkit-box 有效，flex 无效 */
+.mult-ellipsis {
+	/* 只有 -webkit-box 有效，flex 无效 */
 	display: -webkit-box;
 	/*! autoprefixer: ignore next */
 	-webkit-box-orient: vertical;
@@ -242,39 +258,39 @@ button, .btn, [type=button], [type=reset], [type=submit]{
 /* 英文和数字中间空格隔开，IE 和 Chrome 的效果就会相同 */
 /* 文字自动两端对齐 (趣味样式，仅供体验，不保证兼容) */
 .justify {
-  text-align: justify;
-  text-justify: distribute-all-lines;
-  text-align-last: justify;
+	text-align: justify;
+	text-justify: distribute-all-lines;
+	text-align-last: justify;
 	padding: 0;
 	height: 20px;
 	font-size: 14px;
 	line-height: calc(20px - 3px * 2);
 }
-@media screen and (-webkit-min-device-pixel-ratio: 0){
-  .justify:after{
-    content: "";
-    display:  inline-block;
-    width: 100%;
-    overflow: hidden;
-    height: 0;
-  }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+	.justify:after {
+		content: "";
+		display:  inline-block;
+		width: 100%;
+		overflow: hidden;
+		height: 0;
+	}
 }
 
 /* IE10+ */
 /* PS透明背景效果 (趣味样式，仅供体验，不保证兼容) */
-.ps-bg{
+.ps-bg {
 	background: linear-gradient(to top right, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),
-              linear-gradient(to top right, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+							linear-gradient(to top right, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
 	background-size: 20px 20px;
 	background-position: 0px 0px, 10px 10px;
 }
 
 /* IE10+ */
 /* 蚂蚁线效果 (趣味样式，仅供体验，不保证兼容) */
-.ant-line{
+.ant-line {
 	border: 1px solid transparent;
 	background: linear-gradient(white,white) padding-box,
-              repeating-linear-gradient( -45deg, currentColor 0%, currentColor 25%, white 0%, white 50%) 0 / 8.4px 8.4px;
+							repeating-linear-gradient( -45deg, currentColor 0%, currentColor 25%, white 0%, white 50%) 0 / 8.4px 8.4px;
 	animation: antLine 0.5s linear infinite;
 }
 @keyframes antLine { to { background-position: 8.4px; } }

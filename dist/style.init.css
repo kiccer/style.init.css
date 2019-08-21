@@ -1,9 +1,10 @@
 @charset "UTF-8";
 /**
- * Some of the styles come from https://github.com/necolas/normalize.css (@necolas)
+ * Style.init.css (Style initialization)
  * Author: kiccer
-**/
-/* 外部资源 */
+ * Website: https://github.com/kiccer/style.init.css
+ * Tip: Some of the styles come from https://github.com/necolas/normalize.css (@necolas)
+ */
 /* 字体大小 rem 单位兼容 */
 /* button 样式复用模块 */
 /* 所有元素初始化 */
@@ -47,13 +48,35 @@ body {
   body * {
     max-height: 999999999999px; }
 
-/* from normalize.css */
 main {
   display: block; }
 
-/* from normalize.css */
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  font-weight: lighter; }
+
 h1 {
-  font-size: 2em; }
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0; }
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+h4 {
+  margin: 1.33em 0; }
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0; }
+
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0; }
 
 hr {
   display: block;
@@ -70,20 +93,18 @@ a {
   a:hover {
     text-decoration: underline; }
 
-/* from normalize.css */
 abbr[title] {
   border-bottom: none;
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted; }
 
-/* from normalize.css */
 b, strong {
   font-weight: bolder; }
 
-/* from normalize.css */
 pre, code, kbd, samp {
   font-size: 1em;
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace; }
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+  margin: 1em 0px; }
 
 pre {
   background-color: #f6f8fa;
@@ -99,11 +120,9 @@ code {
   border-radius: 3px;
   padding: .2em .4em; }
 
-/* from normalize.css */
 small {
   font-size: 80%; }
 
-/* from normalize.css */
 sub, sup {
   font-size: 75%;
   line-height: 0;
@@ -116,7 +135,6 @@ sub {
 sup {
   top: -0.5em; }
 
-/* from normalize.css */
 fieldset {
   padding: 0.35em 0.75em 0.625em; }
 
@@ -125,44 +143,35 @@ legend {
   max-width: 100%;
   white-space: normal; }
 
-/* from normalize.css */
 progress {
   vertical-align: baseline; }
 
-/* from normalize.css */
 textarea {
   overflow: auto; }
 
-/* from normalize.css */
 [type=number]::-webkit-inner-spin-button, [type=number] ::-webkit-outer-spin-button {
   height: auto; }
 
-/* from normalize.css */
 [type="search"] {
   -webkit-appearance: textfield;
      -moz-appearance: textfield;
           appearance: textfield;
   outline-offset: -2px; }
 
-/* from normalize.css */
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
           appearance: none; }
 
-/* from normalize.css */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
           appearance: button; }
 
-/* from normalize.css */
 details {
   display: block; }
 
-/* from normalize.css */
 summary {
   display: list-item; }
 
-/* from normalize.css */
 template, [hidden] {
   display: none; }
 
@@ -171,7 +180,6 @@ img {
   display: block;
   width: auto;
   height: auto;
-  /* from normalize.css */
   border-style: none; }
 
 table {
@@ -213,8 +221,8 @@ button, .btn, [type=button], [type=reset], [type=submit] {
     border-color: #2C3E50;
     background-color: #2C3E50; }
   button:active, .btn:active, [type=button]:active, [type=reset]:active, [type=submit]:active {
-    -webkit-box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
-            box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3); }
+    -webkit-box-shadow: inset 0 0 calc(100vw + 100vh) rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 0 calc(100vw + 100vh) rgba(0, 0, 0, 0.3); }
   button.btn-primary:hover, .btn.btn-primary:hover, [type=button].btn-primary:hover, [type=reset].btn-primary:hover, [type=submit].btn-primary:hover {
     color: #FFFFFFEE;
     border-color: #1A7FD2BF;

@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../dist/style.init.css">
   <title>Demo</title>
   <style>
-    h1{
+    .title{
       text-align: center;
     }
     .thanks{
@@ -22,13 +22,9 @@
       min-height: 100px;
       padding: 0 20px;
     }
-    h2{
-      margin-bottom: 10px;
-      padding-bottom: 5px;
+    .item-title{
+      line-height: 2;
       border-bottom: 1px solid #ccc;
-    }
-    pre{
-      margin-bottom: 60px;
     }
     ul{
       padding-left: 20px;
@@ -72,7 +68,7 @@
 </head>
 <body>
 
-  <h1>Style.init.css Demo</h1><hr>
+  <h1 class="title">Style.init.css Demo</h1><hr>
 
   <p class="thanks">
     <small>Thanks for <a href="https://github.com/necolas/normalize.css" target="_blank">normalize.css</a>.</small>
@@ -80,27 +76,34 @@
 
   <main>
 
-    <h2>NPM</h2>
+    <h2 class="item-title">NPM</h2>
     <pre>npm install --save style.init.css</pre>
 
-    <h2>Use</h2>
+    <h2 class="item-title">Use</h2>
     <pre>import 'style.init.css'<br>// or<br>&lt;link rel="stylesheet" href="./dist/style.init.min.css"&gt;</pre>
 
-    <h2>项目描述</h2>
+    <h2 class="item-title">项目描述</h2>
     <ul>
       <li>项目使用 <code>postcss</code> 插件实现样式兼容，可供日常项目开发使用。</li>
       <li>部分样式参考 <code>normalize.css</code></li>
       <li>有好的提议可以在 <code>Issues</code> 反馈给我，我会很乐意采纳。</li>
     </ul>
 
-    <h2>Project description<sup><a href="https://fanyi.baidu.com" target="_blank">百度翻译</a></sup></h2>
+    <h2 class="item-title">Project description<sup><a href="https://fanyi.baidu.com" target="_blank">百度翻译</a></sup></h2>
     <ul>
       <li>The project uses <code>postcss</code> plug-in to achieve style compatibility, which can be used in daily project development.</li>
       <li>Some styles refer to <code>normalize.css</code></li>
       <li>There are good suggestions that can be fed back to me at <code>Issues</code>, and I will be happy to adopt them.</li>
     </ul>
 
-    <h2>Buttons</h2>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+
+    <h2 class="item-title">Buttons</h2>
     <table>
       <tr>
         <th>Button</th>
@@ -156,7 +159,7 @@
       </tr>
     </table>
 
-    <h2>.ellipsis</h2>
+    <h2 class="item-title">.ellipsis</h2>
     <p class="p1 ellipsis">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
     </p>
@@ -171,7 +174,7 @@
     </p>
     <pre>&lt;p class="ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-    <h2>.mult-ellipsis<small>not IE</small></h2>
+    <h2 class="item-title">.mult-ellipsis<small>not IE</small></h2>
     <p class="p1 mult-ellipsis">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
     </p>
@@ -186,32 +189,32 @@
     </p>
     <pre>&lt;p class="mult-ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-    <h2>.justify<small>No support for Firefox, IE and Chrome show differences</small></h2>
+    <h2 class="item-title">.justify<small>No support for Firefox, IE and Chrome show differences</small></h2>
     <p class="p1 justify">测试文本</p>
-    <p class="p2 justify">测试文本</p>
+    <p class="p2 justify">测 试 文 本</p>
     <p class="p3 justify">测试文本</p>
-    <p class="p4 justify">测试文本</p>
-    <pre>&lt;p class="justify"&gt;测试文本&lt;/p&gt;</pre>
-    <p class="p1 justify">E n g l i s h</p>
+    <p class="p4 justify">测 试 文 本</p>
+    <pre>&lt;p class="justify"&gt;测 试 文 本&lt;/p&gt; // Spaced by space</pre>
+    <p class="p1 justify">English</p>
     <p class="p2 justify">E n g l i s h</p>
-    <p class="p3 justify">E n g l i s h</p>
+    <p class="p3 justify">English</p>
     <p class="p4 justify">E n g l i s h</p>
     <pre>&lt;p class="justify"&gt;E n g l i s h&lt;/p&gt; // Spaced by space</pre>
-    <p class="p1 justify">1 2 3 4 5 6 7 8 9</p>
+    <p class="p1 justify">123456789</p>
     <p class="p2 justify">1 2 3 4 5 6 7 8 9</p>
-    <p class="p3 justify">1 2 3 4 5 6 7 8 9</p>
+    <p class="p3 justify">123456789</p>
     <p class="p4 justify">1 2 3 4 5 6 7 8 9</p>
     <pre>&lt;p class="justify"&gt;1 2 3 4 5 6 7 8 9&lt;/p&gt; // Spaced by space</pre>
 
-    <h2>.ps-bg<small>Just for experience</small></h2>
+    <h2 class="item-title">.ps-bg<small>Just for experience</small></h2>
     <div class="box ps-bg"></div>
     <pre>&lt;div class="ps-bg"&gt;&lt;/div&gt;</pre>
 
-    <h2>.ant-line<small>Just for experience</small></h2>
+    <h2 class="item-title">.ant-line<small>Just for experience</small></h2>
     <div class="box ant-line"></div>
     <pre>&lt;div class="ant-line"&gt;&lt;/div&gt;</pre>
 
-    <h2>sub, sup</h2>
+    <h2 class="item-title">sub, sup</h2>
     <p class="subp">
       English<sub>en</sub><!--
       -->English<sup>en</sup><!--

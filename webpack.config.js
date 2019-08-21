@@ -17,8 +17,8 @@ let webpackConfig = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].min.css',
-      chunkFilename: '[id].css',
-    }),
+      chunkFilename: '[id].css'
+    })
   ],
   module: {
     rules: [
@@ -29,7 +29,7 @@ let webpackConfig = {
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
-          'sass-loader',
+          'sass-loader'
         ]
       }
     ]
