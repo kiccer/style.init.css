@@ -5,7 +5,7 @@
 }
 /* button 样式复用模块 */
 @mixin button-style ($face-color, $bg-color) {
-  &:hover{
+  &:not([disabled]):hover{
 		color: #{$face-color}EE;
 		border-color: #{$bg-color}BF;
     background-color: #{$bg-color}BF;

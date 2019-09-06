@@ -20,7 +20,7 @@
       max-width: 1200px;
       margin: auto;
       min-height: 100px;
-      padding: 0 20px;
+      padding: 0 20px 100px;
     }
     .item-title{
       line-height: 2;
@@ -33,17 +33,10 @@
     li{
       margin-bottom: 5px;
     }
-    table{
-      margin-bottom: 60px;
+    p{
+      margin-bottom: 15px;
+      line-height: 1.5;
     }
-    td, th{
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-    td:nth-of-type(n + 2){
-      text-align: left;
-    }
-    p{ margin-bottom: 15px; }
     p[class*=p]{
       border: 1px solid #ccc;
       padding: 3px;
@@ -64,6 +57,11 @@
     small:before{
       content: " - ";
     }
+    [class^=col-] {
+      background-color: #ccc;
+      padding: 10px;
+      border: 1px solid #666;
+    }
   </style>
 </head>
 <body>
@@ -74,7 +72,7 @@
     <small>Thanks for <a href="https://github.com/necolas/normalize.css" target="_blank">normalize.css</a>.</small>
   </p>
 
-  <main>
+  <main id="app">
 
     <h2 class="item-title">NPM</h2>
     <pre>npm install --save style.init.css</pre>
@@ -117,40 +115,16 @@
           </code>
         </td>
       </tr>
-      <tr>
-        <td><button class="btn-primary">primary</button></td>
+      <tr v-for="(n, i) in ['primary', 'success', 'warning', 'error']" :key="'tr' + i">
+        <td><button :class="['btn-' + n]">{{ n }}</button></td>
         <td>
           <code>
-            &lt;button class="btn-primary"&gt;primary&lt;/button&gt;
+            &lt;button class="btn-{{ n }}"&gt;{{ n }}&lt;/button&gt;
           </code>
         </td>
       </tr>
       <tr>
-        <td><button class="btn-success">success</button></td>
-        <td>
-          <code>
-            &lt;button class="btn-success"&gt;success&lt;/button&gt;
-          </code>
-        </td>
-      </tr>
-      <tr>
-        <td><button class="btn-warning">warning</button></td>
-        <td>
-          <code>
-            &lt;button class="btn-warning"&gt;warning&lt;/button&gt;
-          </code>
-        </td>
-      </tr>
-      <tr>
-        <td><button class="btn-error">error</button></td>
-        <td>
-          <code>
-            &lt;button class="btn-error"&gt;error&lt;/button&gt;
-          </code>
-        </td>
-      </tr>
-      <tr>
-        <td><button disabled>disabled</button></td>
+        <td><button class="btn-error" disabled>disabled</button></td>
         <td>
           <code>
             &lt;button disabled&gt;disabled&lt;/button&gt;
@@ -160,51 +134,22 @@
     </table>
 
     <h2 class="item-title">.ellipsis</h2>
-    <p class="p1 ellipsis">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
-    </p>
-    <p class="p2 ellipsis">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
-    </p>
-    <p class="p3 ellipsis">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
-    </p>
-    <p class="p4 ellipsis">
+    <p v-for="(n, i) in 4" :key="'a' + i" class="ellipsis" :class="['p' + n]">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
     </p>
     <pre>&lt;p class="ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
     <h2 class="item-title">.mult-ellipsis<small>not IE</small></h2>
-    <p class="p1 mult-ellipsis">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
-    </p>
-    <p class="p2 mult-ellipsis">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
-    </p>
-    <p class="p3 mult-ellipsis">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
-    </p>
-    <p class="p4 mult-ellipsis">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia saepe, perspiciatis voluptates sint, similique doloremque ipsum ullam adipisci nostrum, alias cumque! Provident ipsa quos optio aliquam, veritatis explicabo enim magnam.
+    <p v-for="(n, i) in 4" :key="'b' + i" class="mult-ellipsis" :class="['p' + n]">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
     </p>
     <pre>&lt;p class="mult-ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-    <h2 class="item-title">.justify<small>No support for Firefox, IE and Chrome show differences</small></h2>
-    <p class="p1 justify">测试文本</p>
-    <p class="p2 justify">测 试 文 本</p>
-    <p class="p3 justify">测试文本</p>
-    <p class="p4 justify">测 试 文 本</p>
-    <pre>&lt;p class="justify"&gt;测 试 文 本&lt;/p&gt; // Spaced by space</pre>
-    <p class="p1 justify">English</p>
-    <p class="p2 justify">E n g l i s h</p>
-    <p class="p3 justify">English</p>
-    <p class="p4 justify">E n g l i s h</p>
-    <pre>&lt;p class="justify"&gt;E n g l i s h&lt;/p&gt; // Spaced by space</pre>
-    <p class="p1 justify">123456789</p>
-    <p class="p2 justify">1 2 3 4 5 6 7 8 9</p>
-    <p class="p3 justify">123456789</p>
-    <p class="p4 justify">1 2 3 4 5 6 7 8 9</p>
-    <pre>&lt;p class="justify"&gt;1 2 3 4 5 6 7 8 9&lt;/p&gt; // Spaced by space</pre>
+    <h2 class="item-title">.justify<small>In different browsers, it will show different effects.</small></h2>
+    <div v-for="(n, i) in ['测试文本', 'English', '123456789']" :key="'c' + i">
+      <p v-for="(m, j) in 4" :key="j" class="justify" :class="['p' + (j + 1)]">{{ j % 2 ? n.split('').join(' ') : n }}</p>
+      <pre>&lt;p class="justify"&gt;{{ n.split('').join(' ') }}&lt;/p&gt; // Spaced by space</pre>
+    </div>
 
     <h2 class="item-title">.ps-bg<small>Just for experience</small></h2>
     <div class="box ps-bg"></div>
@@ -231,7 +176,66 @@
       -->中文<sub>长文本长文本长文本长文本长文本长文本长文本长文本</sub>
     </p>
 
+    <h2 class="item-title">.row/.col-[1~24]/.span-[1~24]</h2>
+    <div class="row">
+      <div class="col-6" v-for="(n, i) in 4" :key="i">col-6</div>
+    </div>
+    <div class="row">
+      <div class="col-6" v-for="(n, i) in 3" :key="i">col-6</div>
+    </div>
+    <div class="row">
+      <div class="col-6 span-6">col-6 span-6</div>
+      <div class="col-6">col-6</div>
+      <div class="col-6">col-6</div>
+    </div>
+    <div class="row">
+      <div class="col-6">col-6</div>
+      <div class="col-6 span-6">col-6 span-6</div>
+      <div class="col-6">col-6</div>
+    </div>
+    <div class="row">
+      <div class="col-6">col-6</div>
+      <div class="col-6">col-6</div>
+      <div class="col-6 span-6">col-6 span-6</div>
+    </div>
+
+    <h2 class="item-title">table</h2>
+    <table>
+      <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>hash</th>
+      </tr>
+      <tr v-for="(n, i) in ['ming', 'hong', 'wang', 'li', 'lin', 'liu']" :key="i">
+        <td>xiao {{ n }}</td>
+        <td>{{ ~~(Math.random() * 10 + 10) }}</td>
+        <td>{{ md5(Math.random() * Date.now()) }}</td>
+      </tr>
+    </table>
+
+    <h2 class="item-title">kbd</h2>
+    <p>
+      Keyboard keys: <kbd v-for="(n, i) in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ[]{}:,./<>?1234567890`-=~!@#$%^&*()_+'" :key="i">{{ n }}</kbd>
+      <kbd>ctrl</kbd>
+      <kbd>shift</kbd>
+      <kbd>alt</kbd>
+    </p>
+
   </main>
 
 </body>
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script>
+/* global Vue md5 */
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  data () {
+    return {
+      md5
+    }
+  }
+})
+</script>
 </html>

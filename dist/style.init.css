@@ -32,18 +32,20 @@ html {
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
-          text-size-adjust: 100%; }
+          text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 body {
   font-size: 14px;
   font-weight: 400;
-  font-family: 'Avenir', 'Microsoft YaHei', 'Monaco', 'Consolas';
+  font-family: 'Avenir', 'Microsoft YaHei', 'Monaco', Helvetica, Arial, sans-serif, 'Consolas';
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   vertical-align: baseline;
   text-align: left;
+  line-height: 1.5;
   /* qq浏览器内核兼容机制，为了在移动设备上，防止部分文本内容被放大字体(去除字体在手机qq浏览器中迷之放大的BUG) */ }
   body * {
     max-height: 999999999999px; }
@@ -68,6 +70,7 @@ h3 {
   margin: 1em 0; }
 
 h4 {
+  font-size: 1em;
   margin: 1.33em 0; }
 
 h5 {
@@ -82,7 +85,7 @@ hr {
   display: block;
   width: 100%;
   background-color: currentColor;
-  margin: 10px 0;
+  margin: 10px auto;
   height: 1px;
   overflow: visible; }
 
@@ -103,25 +106,42 @@ b, strong {
 
 pre, code, kbd, samp {
   font-size: 1em;
-  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-  margin: 1em 0px; }
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace; }
 
 pre {
   background-color: #f6f8fa;
   border-radius: 3px;
   line-height: 1.45;
   padding: 16px;
-  overflow: auto; }
+  overflow: auto;
+  margin: 1em 0px; }
 
 code {
   display: inline-block;
   line-height: 1;
   background-color: #F3F4F4;
   border-radius: 3px;
-  padding: .2em .4em; }
+  padding: 0.2em 0.4em;
+  margin: 0; }
+
+kbd {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.75em;
+  background-color: #7b95af;
+  margin: 0 calc(1em / 12);
+  min-width: calc(16em / 12);
+  height: calc(16em / 12);
+  line-height: 1em;
+  text-align: center;
+  border-radius: calc(3em / 12);
+  padding: calc(2em / 12) calc(4em / 12);
+  text-shadow: 0 0 calc(1em / 12) #000;
+  -webkit-box-shadow: calc(1em / 12) calc(1em / 12) calc(1em / 12) 0 rgba(0, 0, 0, 0.5), calc(-1em / 12) calc(-1em / 12) calc(1em / 12) 0 rgba(0, 0, 0, 0.5) inset;
+          box-shadow: calc(1em / 12) calc(1em / 12) calc(1em / 12) 0 rgba(0, 0, 0, 0.5), calc(-1em / 12) calc(-1em / 12) calc(1em / 12) 0 rgba(0, 0, 0, 0.5) inset; }
 
 small {
-  font-size: 80%; }
+  font-size: 0.8em; }
 
 sub, sup {
   font-size: 75%;
@@ -186,10 +206,16 @@ table {
   border-spacing: 0px 0px;
   width: 100%;
   text-align: center;
+  vertical-align: middle;
   border-collapse: collapse; }
+  table th, table td {
+    padding: 5px;
+    border: 1px solid #ccc; }
   table th {
     font-size: 16px;
     font-weight: 700; }
+  table td {
+    text-align: center; }
 
 select {
   text-transform: none; }
@@ -211,7 +237,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
   text-transform: none;
   /* Meaningful */
   /* disabled */ }
-  button:hover, .btn:hover, [type=button]:hover, [type=reset]:hover, [type=submit]:hover {
+  button:not([disabled]):hover, .btn:not([disabled]):hover, [type=button]:not([disabled]):hover, [type=reset]:not([disabled]):hover, [type=submit]:not([disabled]):hover {
     cursor: pointer;
     color: #FFFFFF;
     border-color: #2C3E50BF;
@@ -223,7 +249,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
   button:active, .btn:active, [type=button]:active, [type=reset]:active, [type=submit]:active {
     -webkit-box-shadow: inset 0 0 calc(100vw + 100vh) rgba(0, 0, 0, 0.3);
             box-shadow: inset 0 0 calc(100vw + 100vh) rgba(0, 0, 0, 0.3); }
-  button.btn-primary:hover, .btn.btn-primary:hover, [type=button].btn-primary:hover, [type=reset].btn-primary:hover, [type=submit].btn-primary:hover {
+  button.btn-primary:not([disabled]):hover, .btn.btn-primary:not([disabled]):hover, [type=button].btn-primary:not([disabled]):hover, [type=reset].btn-primary:not([disabled]):hover, [type=submit].btn-primary:not([disabled]):hover {
     color: #FFFFFFEE;
     border-color: #1A7FD2BF;
     background-color: #1A7FD2BF; }
@@ -231,7 +257,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
     color: #FFFFFF;
     border-color: #1A7FD2;
     background-color: #1A7FD2; }
-  button.btn-success:hover, .btn.btn-success:hover, [type=button].btn-success:hover, [type=reset].btn-success:hover, [type=submit].btn-success:hover {
+  button.btn-success:not([disabled]):hover, .btn.btn-success:not([disabled]):hover, [type=button].btn-success:not([disabled]):hover, [type=reset].btn-success:not([disabled]):hover, [type=submit].btn-success:not([disabled]):hover {
     color: #FFFFFFEE;
     border-color: #04A000BF;
     background-color: #04A000BF; }
@@ -239,7 +265,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
     color: #FFFFFF;
     border-color: #04A000;
     background-color: #04A000; }
-  button.btn-error:hover, .btn.btn-error:hover, [type=button].btn-error:hover, [type=reset].btn-error:hover, [type=submit].btn-error:hover {
+  button.btn-error:not([disabled]):hover, .btn.btn-error:not([disabled]):hover, [type=button].btn-error:not([disabled]):hover, [type=reset].btn-error:not([disabled]):hover, [type=submit].btn-error:not([disabled]):hover {
     color: #FFFFFFEE;
     border-color: #CA0000BF;
     background-color: #CA0000BF; }
@@ -247,7 +273,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
     color: #FFFFFF;
     border-color: #CA0000;
     background-color: #CA0000; }
-  button.btn-warning:hover, .btn.btn-warning:hover, [type=button].btn-warning:hover, [type=reset].btn-warning:hover, [type=submit].btn-warning:hover {
+  button.btn-warning:not([disabled]):hover, .btn.btn-warning:not([disabled]):hover, [type=button].btn-warning:not([disabled]):hover, [type=reset].btn-warning:not([disabled]):hover, [type=submit].btn-warning:not([disabled]):hover {
     color: #FFFFFFEE;
     border-color: #F4BD00BF;
     background-color: #F4BD00BF; }
@@ -280,7 +306,8 @@ button, .btn, [type=button], [type=reset], [type=submit] {
   /*! autoprefixer: ignore next */
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  overflow: hidden; }
+  overflow: hidden;
+  line-height: 1.5; }
 
 /* 不支持火狐，IE 和 Chrome 下显示有差异 */
 /* 英文和数字中间空格隔开，IE 和 Chrome 的效果就会相同 */
@@ -327,4 +354,168 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 @keyframes antLine {
   to {
     background-position: 8.4px; } }
+
+/* 文本选中样式 */
+*::-moz-selection {
+  background-color: #ADE1F5;
+  color: white; }
+*::selection {
+  background-color: #ADE1F5;
+  color: white; }
+
+/* layout */
+.row:after {
+  display: block;
+  content: "";
+  clear: both; }
+
+.row + .row {
+  margin-top: 10px; }
+
+.row > [class^=col-] {
+  float: left; }
+
+.row > .col-1 {
+  width: calc(100% / 24 * 1); }
+
+.row > .span-1 {
+  margin-left: calc(100% / 24 * 1); }
+
+.row > .col-2 {
+  width: calc(100% / 24 * 2); }
+
+.row > .span-2 {
+  margin-left: calc(100% / 24 * 2); }
+
+.row > .col-3 {
+  width: calc(100% / 24 * 3); }
+
+.row > .span-3 {
+  margin-left: calc(100% / 24 * 3); }
+
+.row > .col-4 {
+  width: calc(100% / 24 * 4); }
+
+.row > .span-4 {
+  margin-left: calc(100% / 24 * 4); }
+
+.row > .col-5 {
+  width: calc(100% / 24 * 5); }
+
+.row > .span-5 {
+  margin-left: calc(100% / 24 * 5); }
+
+.row > .col-6 {
+  width: calc(100% / 24 * 6); }
+
+.row > .span-6 {
+  margin-left: calc(100% / 24 * 6); }
+
+.row > .col-7 {
+  width: calc(100% / 24 * 7); }
+
+.row > .span-7 {
+  margin-left: calc(100% / 24 * 7); }
+
+.row > .col-8 {
+  width: calc(100% / 24 * 8); }
+
+.row > .span-8 {
+  margin-left: calc(100% / 24 * 8); }
+
+.row > .col-9 {
+  width: calc(100% / 24 * 9); }
+
+.row > .span-9 {
+  margin-left: calc(100% / 24 * 9); }
+
+.row > .col-10 {
+  width: calc(100% / 24 * 10); }
+
+.row > .span-10 {
+  margin-left: calc(100% / 24 * 10); }
+
+.row > .col-11 {
+  width: calc(100% / 24 * 11); }
+
+.row > .span-11 {
+  margin-left: calc(100% / 24 * 11); }
+
+.row > .col-12 {
+  width: calc(100% / 24 * 12); }
+
+.row > .span-12 {
+  margin-left: calc(100% / 24 * 12); }
+
+.row > .col-13 {
+  width: calc(100% / 24 * 13); }
+
+.row > .span-13 {
+  margin-left: calc(100% / 24 * 13); }
+
+.row > .col-14 {
+  width: calc(100% / 24 * 14); }
+
+.row > .span-14 {
+  margin-left: calc(100% / 24 * 14); }
+
+.row > .col-15 {
+  width: calc(100% / 24 * 15); }
+
+.row > .span-15 {
+  margin-left: calc(100% / 24 * 15); }
+
+.row > .col-16 {
+  width: calc(100% / 24 * 16); }
+
+.row > .span-16 {
+  margin-left: calc(100% / 24 * 16); }
+
+.row > .col-17 {
+  width: calc(100% / 24 * 17); }
+
+.row > .span-17 {
+  margin-left: calc(100% / 24 * 17); }
+
+.row > .col-18 {
+  width: calc(100% / 24 * 18); }
+
+.row > .span-18 {
+  margin-left: calc(100% / 24 * 18); }
+
+.row > .col-19 {
+  width: calc(100% / 24 * 19); }
+
+.row > .span-19 {
+  margin-left: calc(100% / 24 * 19); }
+
+.row > .col-20 {
+  width: calc(100% / 24 * 20); }
+
+.row > .span-20 {
+  margin-left: calc(100% / 24 * 20); }
+
+.row > .col-21 {
+  width: calc(100% / 24 * 21); }
+
+.row > .span-21 {
+  margin-left: calc(100% / 24 * 21); }
+
+.row > .col-22 {
+  width: calc(100% / 24 * 22); }
+
+.row > .span-22 {
+  margin-left: calc(100% / 24 * 22); }
+
+.row > .col-23 {
+  width: calc(100% / 24 * 23); }
+
+.row > .span-23 {
+  margin-left: calc(100% / 24 * 23); }
+
+.row > .col-24 {
+  width: calc(100% / 24 * 24); }
+
+.row > .span-24 {
+  margin-left: calc(100% / 24 * 24); }
 

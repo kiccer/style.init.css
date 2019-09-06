@@ -1,13 +1,15 @@
 {
   "name": "style.init.css",
-  "description": "Page style initialization.",
-  "version": "1.0.4",
-  "version_short": "1.0",
+  "description": "Page style initialization, and make the style look more normal in some browsers.",
+  "version": "1.1.0",
+  "version_short": "1.1",
   "keywords": [
     "css",
     "sass",
     "front-end",
-    "web"
+    "web",
+    "browser",
+    "compatibility"
   ],
   "main": "./dist/style.init.css",
   "scripts": {

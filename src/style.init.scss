@@ -28,17 +28,19 @@ html {
 	font-size: 1px;
 	background-color: #fff;
 	text-size-adjust: 100%;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
 	font-size: 14px;
 	font-weight: 400;
-	font-family: 'Avenir', 'Microsoft YaHei', 'Monaco', 'Consolas';
+	font-family: 'Avenir', 'Microsoft YaHei', 'Monaco', Helvetica, Arial, sans-serif, 'Consolas';
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: #2c3e50;
 	vertical-align: baseline;
 	text-align: left;
+	line-height: 1.5;
 	/* qq浏览器内核兼容机制，为了在移动设备上，防止部分文本内容被放大字体(去除字体在手机qq浏览器中迷之放大的BUG) */
 	* { max-height: 999999999999px; }
 }
@@ -66,6 +68,7 @@ h3 {
 }
 
 h4 {
+	font-size: 1em;
 	margin: 1.33em 0;
 }
 
@@ -83,7 +86,7 @@ hr {
 	display: block;
 	width: 100%;
 	background-color: currentColor;
-	margin: 10px 0;
+	margin: 10px auto;
 	height: 1px;
 	overflow: visible;
 }
@@ -107,7 +110,6 @@ b, strong { font-weight: bolder; }
 pre, code, kbd, samp {
 	font-size: 1em;
 	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
-	margin: 1em 0px;
 }
 
 pre {
@@ -116,6 +118,7 @@ pre {
 	line-height: 1.45;
 	padding: 16px;
 	overflow: auto;
+	margin: 1em 0px;
 }
 
 code {
@@ -123,10 +126,28 @@ code {
 	line-height: 1;
 	background-color: #F3F4F4;
 	border-radius: 3px;
-	padding: .2em .4em;
+	padding: 0.2em 0.4em;
+	margin: 0;
 }
 
-small { font-size: 80%; }
+kbd {
+	display: inline-block;
+	color: #fff;
+	font-size: 0.75em;
+	background-color: #7b95af;
+	margin: 0 calc(1em / 12);
+	min-width: calc(16em / 12);
+	height: calc(16em / 12);
+	line-height: 1em;
+	text-align: center;
+	border-radius: calc(3em / 12);
+	padding: calc(2em / 12) calc(4em / 12);
+	text-shadow: 0 0 calc(1em / 12) #000;
+	box-shadow: calc(1em / 12) calc(1em / 12) calc(1em / 12) 0 rgba(0, 0, 0, 0.5),
+							calc(-1em / 12) calc(-1em / 12) calc(1em / 12) 0 rgba(0, 0, 0, 0.5) inset;
+}
+
+small { font-size: 0.8em; }
 
 sub, sup{
 	font-size: 75%;
@@ -175,7 +196,6 @@ img {
 	display: block;
 	width: auto;
 	height: auto;
-
 	border-style: none;
 }
 
@@ -183,10 +203,18 @@ table {
 	border-spacing: 0px 0px;
 	width: 100%;
 	text-align: center;
+	vertical-align: middle;
 	border-collapse: collapse;
+	th, td {
+		padding: 5px;
+		border: 1px solid #ccc;
+	}
 	th {
 		font-size: 16px;
 		font-weight: 700;
+	}
+	td {
+		text-align: center;
 	}
 }
 
@@ -202,7 +230,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	outline: none;
 	appearance: button;
 	text-transform: none;
-	&:hover {
+	&:not([disabled]):hover {
 		cursor: pointer;
 		color: #FFFFFF;
 		border-color: #2C3E50BF;
@@ -252,6 +280,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 	overflow: hidden;
+	line-height: 1.5;
 }
 
 /* 不支持火狐，IE 和 Chrome 下显示有差异 */
@@ -294,3 +323,36 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	animation: antLine 0.5s linear infinite;
 }
 @keyframes antLine { to { background-position: 8.4px; } }
+
+/* 文本选中样式 */
+*::selection {
+	background-color: #ADE1F5;
+	color: white;
+}
+
+/* layout */
+.row {
+	&:after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+
+	& + .row {
+		margin-top: 10px;
+	}
+
+	& > [class^=col-] {
+		float: left;
+	}
+
+	@for $i from 1 through 24 {
+		& > .col-#{$i} {
+			width: calc(100% / 24 * #{$i});
+		}
+		& > .span-#{$i} {
+			margin-left: calc(100% / 24 * #{$i});
+		}
+	}
+
+}
