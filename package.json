@@ -1,8 +1,8 @@
 {
   "name": "style.init.css",
   "description": "Page style initialization, and make the style look more normal in some browsers.",
-  "version": "1.1.0",
-  "version_short": "1.1",
+  "version": "1.2.0",
+  "version_short": "1.2",
   "keywords": [
     "css",
     "sass",

@@ -115,7 +115,7 @@
           </code>
         </td>
       </tr>
-      <tr v-for="(n, i) in ['primary', 'success', 'warning', 'error']" :key="'tr' + i">
+      <tr v-for="(n, i) in ['normal', 'primary', 'success', 'warning', 'error']" :key="'tr' + i">
         <td><button :class="['btn-' + n]">{{ n }}</button></td>
         <td>
           <code>
@@ -138,6 +138,12 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
     </p>
     <pre>&lt;p class="ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+
+    <h2 class="item-title">.ellipsis-1 ~ .ellipsis-10</h2>
+    <p v-for="(n, i) in 3" :key="'ellipsis_num' + i" class="p1" :class="['ellipsis-' + n]">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
+    </p>
+    <pre v-for="(n, i) in 3" :key="'ellipsis_num_pre' + i">&lt;p class="ellipsis-{{ n }}"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
     <h2 class="item-title">.mult-ellipsis<small>not IE</small></h2>
     <p v-for="(n, i) in 4" :key="'b' + i" class="mult-ellipsis" :class="['p' + n]">
@@ -176,7 +182,7 @@
       -->中文<sub>长文本长文本长文本长文本长文本长文本长文本长文本</sub>
     </p>
 
-    <h2 class="item-title">.row/.col-[1~24]/.span-[1~24]</h2>
+    <!-- <h2 class="item-title">.row/.col-[1~24]/.span-[1~24]</h2>
     <div class="row">
       <div class="col-6" v-for="(n, i) in 4" :key="i">col-6</div>
     </div>
@@ -197,7 +203,7 @@
       <div class="col-6">col-6</div>
       <div class="col-6">col-6</div>
       <div class="col-6 span-6">col-6 span-6</div>
-    </div>
+    </div> -->
 
     <h2 class="item-title">table</h2>
     <table>

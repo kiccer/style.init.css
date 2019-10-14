@@ -6,7 +6,7 @@
  */
 @import "./_mixin.scss";
 
-/* 所有元素初始化 */
+// 所有元素初始化
 * {
 	border: 0;
 	margin: 0;
@@ -22,8 +22,8 @@
 	vertical-align: inherit;
 	text-align: inherit;
 }
-/* rem单位参考，可以直接用rem作为单位，无需做换算处理，一般用于移动端 */
-/* rem只参考根元素的font-size，即html，body设置了font-size不会影响 */
+// rem单位参考，可以直接用rem作为单位，无需做换算处理，一般用于移动端
+// rem只参考根元素的font-size，即html，body设置了font-size不会影响
 html {
 	font-size: 1px;
 	background-color: #fff;
@@ -41,7 +41,7 @@ body {
 	vertical-align: baseline;
 	text-align: left;
 	line-height: 1.5;
-	/* qq浏览器内核兼容机制，为了在移动设备上，防止部分文本内容被放大字体(去除字体在手机qq浏览器中迷之放大的BUG) */
+	// qq浏览器内核兼容机制，为了在移动设备上，防止部分文本内容被放大字体(去除字体在手机qq浏览器中迷之放大的BUG)
 	* { max-height: 999999999999px; }
 }
 
@@ -191,7 +191,7 @@ summary { display: list-item; }
 
 template, [hidden] { display: none; }
 
-/* 块级img可以除去底部迷之margin，宽高auto兼容IE中设置单独宽或高，图片不会同比例缩放问题 */
+// 块级img可以除去底部迷之margin，宽高auto兼容IE中设置单独宽或高，图片不会同比例缩放问题
 img {
 	display: block;
 	width: auto;
@@ -230,49 +230,66 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	outline: none;
 	appearance: button;
 	text-transform: none;
-	&:not([disabled]):hover {
-		cursor: pointer;
-		color: #FFFFFF;
-		border-color: #2C3E50BF;
-		background-color: #2C3E50BF;
-	}
-	&, &:active {
-		color: #FFFFFF;
-		border-color: #2C3E50;
-		background-color: #2C3E50;
-	}
-	&:active {
-		box-shadow: inset 0 0 calc(100vw + 100vh) rgba(0, 0, 0, .3);
-	}
-	/* Meaningful */
+	color: #FFFFFF;
+	border-color: #2C3E50;
+	background-color: #2C3E50;
+	// &.btn-normal:hover {
+	// 	cursor: pointer;
+	// 	color: #FFFFFF + #202020;
+	// 	border-color: #2C3E50 + #202020;
+	// 	background-color: #2C3E50 + #202020;
+	// }
+	// &.btn-normal:active {
+	// 	color: #FFFFFF - #202020;
+	// 	border-color: #2C3E50 - #202020;
+	// 	background-color: #2C3E50 - #202020;
+	// }
+	// Meaningful
+	&.btn-normal { @include button-style(#FFFFFF, #2C3E50) }
 	&.btn-primary { @include button-style(#FFFFFF, #1A7FD2) }
 	&.btn-success { @include button-style(#FFFFFF, #04A000) }
 	&.btn-error { @include button-style(#FFFFFF, #CA0000) }
 	&.btn-warning { @include button-style(#FFFFFF, #F4BD00) }
-	/* disabled */
+	// disabled
 	&[disabled] {
-		border-color: #dcdcdc;
-		background-color: #dcdcdc;
-		color: #f9f9f9;
-		cursor: not-allowed;
+		&, &:hover {
+			border-color: #dcdcdc;
+			background-color: #dcdcdc;
+			color: #f9f9f9;
+			cursor: not-allowed;
+		}
 	}
 }
 
-/* 清除浮动 */
+// 清除浮动
 .clear:after {
 	display: block;
 	content: "";
 	clear: both;
 }
 
-/* 文本溢出显示省略号 */
+// 文本溢出显示省略号
 .ellipsis {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+
+	// 支持多行省略
+	@for $i from 1 through 10 {
+		&-#{$i} {
+			/* 只有 -webkit-box 有效，flex 无效 */
+			display: -webkit-box;
+			/*! autoprefixer: ignore next */
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: #{$i};
+			overflow: hidden;
+			line-height: 1.5;
+		}
+	}
+
 }
 
-/* 多行文本溢出显示省略号 不兼容IE(Tip: not IE) */
+/* 多行文本溢出显示省略号 不兼容IE(Tip: not IE)，可以用 .ellipsis-3 代替 */
 .mult-ellipsis {
 	/* 只有 -webkit-box 有效，flex 无效 */
 	display: -webkit-box;
@@ -325,34 +342,34 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 @keyframes antLine { to { background-position: 8.4px; } }
 
 /* 文本选中样式 */
-*::selection {
-	background-color: #ADE1F5;
-	color: white;
-}
+// *::selection {
+// 	background-color: #ADE1F5;
+// 	color: white;
+// }
 
 /* layout */
-.row {
-	&:after {
-		display: block;
-		content: "";
-		clear: both;
-	}
-
-	& + .row {
-		margin-top: 10px;
-	}
-
-	& > [class^=col-] {
-		float: left;
-	}
-
-	@for $i from 1 through 24 {
-		& > .col-#{$i} {
-			width: calc(100% / 24 * #{$i});
-		}
-		& > .span-#{$i} {
-			margin-left: calc(100% / 24 * #{$i});
-		}
-	}
-
-}
+// .row {
+// 	&:after {
+// 		display: block;
+// 		content: "";
+// 		clear: both;
+// 	}
+//
+// 	& + .row {
+// 		margin-top: 10px;
+// 	}
+//
+// 	& > [class^=col-] {
+// 		float: left;
+// 	}
+//
+// 	@for $i from 1 through 24 {
+// 		& > .col-#{$i} {
+// 			width: calc(100% / 24 * #{$i});
+// 		}
+// 		& > .span-#{$i} {
+// 			margin-left: calc(100% / 24 * #{$i});
+// 		}
+// 	}
+//
+// }
