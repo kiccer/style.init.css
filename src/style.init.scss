@@ -4,6 +4,7 @@
  * Website: https://github.com/kiccer/style.init.css
  * Tip: Some of the styles come from https://github.com/necolas/normalize.css (@necolas)
  */
+@charset "utf-8";
 @import "./_mixin.scss";
 
 // 所有元素初始化
@@ -226,30 +227,19 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	padding: 3px 6px;
 	border-radius: 4px;
 	user-select: none;
-	border: 1px solid #2C3E50;
+	border: 1px solid;
 	outline: none;
 	appearance: button;
 	text-transform: none;
 	color: #FFFFFF;
 	border-color: #2C3E50;
 	background-color: #2C3E50;
-	// &.btn-normal:hover {
-	// 	cursor: pointer;
-	// 	color: #FFFFFF + #202020;
-	// 	border-color: #2C3E50 + #202020;
-	// 	background-color: #2C3E50 + #202020;
-	// }
-	// &.btn-normal:active {
-	// 	color: #FFFFFF - #202020;
-	// 	border-color: #2C3E50 - #202020;
-	// 	background-color: #2C3E50 - #202020;
-	// }
 	// Meaningful
-	&.btn-normal { @include button-style(#FFFFFF, #2C3E50) }
-	&.btn-primary { @include button-style(#FFFFFF, #1A7FD2) }
-	&.btn-success { @include button-style(#FFFFFF, #04A000) }
-	&.btn-error { @include button-style(#FFFFFF, #CA0000) }
-	&.btn-warning { @include button-style(#FFFFFF, #F4BD00) }
+	&.btn-normal { @include button-style(#2C3E50) }
+	&.btn-primary { @include button-style(#1A7FD2) }
+	&.btn-success { @include button-style(#29bd26) }
+	&.btn-error { @include button-style(#CA0000) }
+	&.btn-warning { @include button-style(#F4BD00) }
 	// disabled
 	&[disabled] {
 		&, &:hover {
@@ -277,7 +267,7 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	// 支持多行省略
 	@for $i from 1 through 10 {
 		&-#{$i} {
-			/* 只有 -webkit-box 有效，flex 无效 */
+			// 只有 -webkit-box 有效，flex 无效
 			display: -webkit-box;
 			/*! autoprefixer: ignore next */
 			-webkit-box-orient: vertical;
@@ -289,9 +279,9 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 
 }
 
-/* 多行文本溢出显示省略号 不兼容IE(Tip: not IE)，可以用 .ellipsis-3 代替 */
+// 多行文本溢出显示省略号 不兼容IE(Tip: not IE)，可以用 .ellipsis-3 代替
 .mult-ellipsis {
-	/* 只有 -webkit-box 有效，flex 无效 */
+	// 只有 -webkit-box 有效，flex 无效
 	display: -webkit-box;
 	/*! autoprefixer: ignore next */
 	-webkit-box-orient: vertical;
@@ -300,9 +290,9 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	line-height: 1.5;
 }
 
-/* 不支持火狐，IE 和 Chrome 下显示有差异 */
-/* 英文和数字中间空格隔开，IE 和 Chrome 的效果就会相同 */
-/* 文字自动两端对齐 (趣味样式，仅供体验，不保证兼容) */
+// 不支持火狐，IE 和 Chrome 下显示有差异
+// 英文和数字中间空格隔开，IE 和 Chrome 的效果就会相同
+// 文字自动两端对齐 (趣味样式，仅供体验，不保证兼容)
 .justify {
 	text-align: justify;
 	text-justify: distribute-all-lines;
@@ -322,8 +312,8 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	}
 }
 
-/* IE10+ */
-/* PS透明背景效果 (趣味样式，仅供体验，不保证兼容) */
+// IE10+
+// PS透明背景效果 (趣味样式，仅供体验，不保证兼容)
 .ps-bg {
 	background: linear-gradient(to top right, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),
 							linear-gradient(to top right, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
@@ -331,8 +321,8 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 	background-position: 0px 0px, 10px 10px;
 }
 
-/* IE10+ */
-/* 蚂蚁线效果 (趣味样式，仅供体验，不保证兼容) */
+// IE10+
+// 蚂蚁线效果 (趣味样式，仅供体验，不保证兼容)
 .ant-line {
 	border: 1px solid transparent;
 	background: linear-gradient(white,white) padding-box,
@@ -341,13 +331,13 @@ button, .btn, [type=button], [type=reset], [type=submit] {
 }
 @keyframes antLine { to { background-position: 8.4px; } }
 
-/* 文本选中样式 */
+// 文本选中样式
 // *::selection {
 // 	background-color: #ADE1F5;
 // 	color: white;
 // }
 
-/* layout */
+// layout
 // .row {
 // 	&:after {
 // 		display: block;

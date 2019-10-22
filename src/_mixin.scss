@@ -1,20 +1,21 @@
-/* 字体大小 rem 单位兼容 */
+// 字体大小 rem 单位兼容
 // @mixin font-size ($px) {
 //   font-size: #{$px}px;
 //   font-size: #{$px}rem;
 // }
-/* button 样式复用模块 */
-@mixin button-style ($face-color, $bg-color) {
-  color: #{$face-color};
+
+// button 样式复用模块
+@mixin button-style ($bg-color) {
+  color: #{hsl(hue($bg-color), saturation($bg-color), 90)};
   border-color: #{$bg-color};
   background-color: #{$bg-color};
   &:hover{
-		color: #{$face-color + #202020};
+		color: #{hsl(hue($bg-color), saturation($bg-color), 95)};
 		border-color: #{$bg-color + #202020};
     background-color: #{$bg-color + #202020};
   }
   &:active{
-		color: #{$face-color - #202020};
+		color: #{hsl(hue($bg-color), saturation($bg-color), 80)};
     border-color: #{$bg-color - #202020};
 		background-color: #{$bg-color - #202020};
   }
