@@ -10,13 +10,13 @@
   border-color: #{$bg-color};
   background-color: #{$bg-color};
   &:hover{
-		color: #{hsl(hue($bg-color), saturation($bg-color), 95)};
-		border-color: #{$bg-color + #202020};
+    color: #{hsl(hue($bg-color), saturation($bg-color), 95)};
+    border-color: #{$bg-color + #202020};
     background-color: #{$bg-color + #202020};
   }
   &:active{
-		color: #{hsl(hue($bg-color), saturation($bg-color), 80)};
+    color: #{hsl(hue($bg-color), saturation($bg-color), 80)};
     border-color: #{$bg-color - #202020};
-		background-color: #{$bg-color - #202020};
+    background-color: #{$bg-color - #202020};
   }
 }
