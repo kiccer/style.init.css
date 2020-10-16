@@ -1,7 +1,7 @@
 {
   "name": "style.init.css",
   "description": "Page style initialization, and make the style look more normal in some browsers.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "version_short": "1.2",
   "keywords": [
     "css",
@@ -12,6 +12,9 @@
     "compatibility"
   ],
   "main": "./dist/style.init.css",
+  "files": [
+    "./dist/style.init.css"
+  ],
   "scripts": {
     "dev": "set NODE_ENV=development&& webpack --progress --colors --watch --mode=development",
     "build": "set NODE_ENV=production&& webpack --progress --colors --mode=production",
