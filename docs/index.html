@@ -1,188 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="../dist/style.init.css">
-  <title>Demo</title>
-  <style>
-    .title{
-      text-align: center;
-    }
-    .thanks{
-      text-align: right;
-      padding: 0 10px;
-      margin-bottom: 60px;
-    }
-    main{
-      max-width: 1200px;
-      margin: auto;
-      min-height: 100px;
-      padding: 0 20px 100px;
-    }
-    .item-title{
-      line-height: 2;
-      border-bottom: 1px solid #ccc;
-    }
-    ul{
-      padding-left: 20px;
-      margin-bottom: 60px;
-    }
-    li{
-      margin-bottom: 5px;
-    }
-    p{
-      margin-bottom: 15px;
-      line-height: 1.5;
-    }
-    p[class*=p]{
-      border: 1px solid #ccc;
-      padding: 3px;
-      border-radius: 3px;
-    }
-    p.p1{ width: 200px; }
-    p.p2{ width: 300px; }
-    p.p3{ width: 400px; }
-    p.p4{ width: 500px; }
-    p.subp{
-      display: inline-block;
-      border: 1px solid #ccc;
-    }
-    .box{
-      height: 200px;
-      margin-bottom: 10px;
-    }
-    small:before{
-      content: " - ";
-    }
-    [class^=col-] {
-      background-color: #ccc;
-      padding: 10px;
-      border: 1px solid #666;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="https://cdn.bootcss.com/normalize/8.0.1/normalize.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../build/style.init.css">
+    <link rel="stylesheet/less" href="./index.less">
+    <title>Demo</title>
 </head>
+
 <body>
 
-  <h1 class="title">Style.init.css Demo</h1><hr>
+    <h1 class="title">Style.init.css Demo</h1>
+    <hr>
 
-  <p class="thanks">
-    <small>Thanks for <a href="https://github.com/necolas/normalize.css" target="_blank">normalize.css</a>.</small>
-  </p>
+    <main id="app">
 
-  <main id="app">
+        <h2 class="item-title">NPM</h2>
+        <pre>npm install --save style.init.css<br># OR<br>yarn add style.init.css</pre>
 
-    <h2 class="item-title">NPM</h2>
-    <pre>npm install --save style.init.css</pre>
+        <h2 class="item-title">Use</h2>
+        <pre>import 'style.init.css'</pre>
 
-    <h2 class="item-title">Use</h2>
-    <pre>import 'style.init.css'<br>// or<br>&lt;link rel="stylesheet" href="./dist/style.init.min.css"&gt;</pre>
+        <h2 class="item-title">项目描述</h2>
+        <ul>
+            <li>项目使用 <code>postcss</code> 插件实现样式兼容，可供日常项目开发使用。</li>
+            <li>部分样式参考 <code>normalize.css</code></li>
+            <li>有好的提议可以在 <code>Issues</code> 反馈给我，我会很乐意采纳。</li>
+        </ul>
 
-    <h2 class="item-title">项目描述</h2>
-    <ul>
-      <li>项目使用 <code>postcss</code> 插件实现样式兼容，可供日常项目开发使用。</li>
-      <li>部分样式参考 <code>normalize.css</code></li>
-      <li>有好的提议可以在 <code>Issues</code> 反馈给我，我会很乐意采纳。</li>
-    </ul>
+        <h2 class="item-title">Project description<sup><a href="https://fanyi.baidu.com" target="_blank">百度翻译</a></sup>
+        </h2>
+        <ul>
+            <li>The project uses <code>postcss</code> plug-in to achieve style compatibility, which can be used in daily
+                project development.</li>
+            <li>Some styles refer to <code>normalize.css</code></li>
+            <li>There are good suggestions that can be fed back to me at <code>Issues</code>, and I will be happy to
+                adopt them.</li>
+        </ul>
 
-    <h2 class="item-title">Project description<sup><a href="https://fanyi.baidu.com" target="_blank">百度翻译</a></sup></h2>
-    <ul>
-      <li>The project uses <code>postcss</code> plug-in to achieve style compatibility, which can be used in daily project development.</li>
-      <li>Some styles refer to <code>normalize.css</code></li>
-      <li>There are good suggestions that can be fed back to me at <code>Issues</code>, and I will be happy to adopt them.</li>
-    </ul>
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
 
-    <h1>h1</h1>
-    <h2>h2</h2>
-    <h3>h3</h3>
-    <h4>h4</h4>
-    <h5>h5</h5>
-    <h6>h6</h6>
+        <h2 class="item-title">Buttons</h2>
+        <table>
+            <tr>
+                <th>Button</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td><button>normal</button></td>
+                <td>
+                    <code>
+                        &lt;button&gt;normal&lt;/button&gt;
+                    </code>
+                </td>
+            </tr>
+            <tr v-for="(n, i) in ['normal', 'primary', 'success', 'warning', 'error']" :key="'tr' + i">
+                <td><button :class="['btn-' + n]">{{ n }}</button></td>
+                <td>
+                    <code>
+                        &lt;button class="btn-{{ n }}"&gt;{{ n }}&lt;/button&gt;
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td><button class="btn-error" disabled>disabled</button></td>
+                <td>
+                    <code>
+                        &lt;button disabled&gt;disabled&lt;/button&gt;
+                    </code>
+                </td>
+            </tr>
+        </table>
 
-    <h2 class="item-title">Buttons</h2>
-    <table>
-      <tr>
-        <th>Button</th>
-        <th>Code</th>
-      </tr>
-      <tr>
-        <td><button>normal</button></td>
-        <td>
-          <code>
-            &lt;button&gt;normal&lt;/button&gt;
-          </code>
-        </td>
-      </tr>
-      <tr v-for="(n, i) in ['normal', 'primary', 'success', 'warning', 'error']" :key="'tr' + i">
-        <td><button :class="['btn-' + n]">{{ n }}</button></td>
-        <td>
-          <code>
-            &lt;button class="btn-{{ n }}"&gt;{{ n }}&lt;/button&gt;
-          </code>
-        </td>
-      </tr>
-      <tr>
-        <td><button class="btn-error" disabled>disabled</button></td>
-        <td>
-          <code>
-            &lt;button disabled&gt;disabled&lt;/button&gt;
-          </code>
-        </td>
-      </tr>
-    </table>
+        <h2 class="item-title">.ellipsis</h2>
+        <p v-for="(n, i) in 4" :key="'a' + i" class="ellipsis" :class="['p' + n]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit
+            molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam
+            accusantium officiis.
+        </p>
+        <pre>&lt;p class="ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-    <h2 class="item-title">.ellipsis</h2>
-    <p v-for="(n, i) in 4" :key="'a' + i" class="ellipsis" :class="['p' + n]">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
-    </p>
-    <pre>&lt;p class="ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+        <h2 class="item-title">.ellipsis-1 ~ .ellipsis-10</h2>
+        <p v-for="(n, i) in 3" :key="'ellipsis_num' + i" class="p1" :class="['ellipsis-' + n]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit
+            molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam
+            accusantium officiis.
+        </p>
+        <pre v-for="(n, i) in 3"
+            :key="'ellipsis_num_pre' + i">&lt;p class="ellipsis-{{ n }}"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-    <h2 class="item-title">.ellipsis-1 ~ .ellipsis-10</h2>
-    <p v-for="(n, i) in 3" :key="'ellipsis_num' + i" class="p1" :class="['ellipsis-' + n]">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
-    </p>
-    <pre v-for="(n, i) in 3" :key="'ellipsis_num_pre' + i">&lt;p class="ellipsis-{{ n }}"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+        <h2 class="item-title">.mult-ellipsis<small>not IE</small></h2>
+        <p v-for="(n, i) in 4" :key="'b' + i" class="mult-ellipsis" :class="['p' + n]">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit
+            molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam
+            accusantium officiis.
+        </p>
+        <pre>&lt;p class="mult-ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-    <h2 class="item-title">.mult-ellipsis<small>not IE</small></h2>
-    <p v-for="(n, i) in 4" :key="'b' + i" class="mult-ellipsis" :class="['p' + n]">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam accusantium officiis.
-    </p>
-    <pre>&lt;p class="mult-ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+        <h2 class="item-title">.justify<small>In different browsers, it will show different effects.</small></h2>
+        <div v-for="(n, i) in ['测试文本', 'English', '123456789']" :key="'c' + i">
+            <p v-for="(m, j) in 4" :key="j" class="justify" :class="['p' + (j + 1)]">
+                {{ j % 2 ? n.split('').join(' ') : n }}</p>
+            <pre>&lt;p class="justify"&gt;{{ n.split('').join(' ') }}&lt;/p&gt; // Spaced by space</pre>
+        </div>
 
-    <h2 class="item-title">.justify<small>In different browsers, it will show different effects.</small></h2>
-    <div v-for="(n, i) in ['测试文本', 'English', '123456789']" :key="'c' + i">
-      <p v-for="(m, j) in 4" :key="j" class="justify" :class="['p' + (j + 1)]">{{ j % 2 ? n.split('').join(' ') : n }}</p>
-      <pre>&lt;p class="justify"&gt;{{ n.split('').join(' ') }}&lt;/p&gt; // Spaced by space</pre>
-    </div>
+        <h2 class="item-title">.ps-bg<small>Just for experience</small></h2>
+        <div class="box ps-bg"></div>
+        <pre>&lt;div class="ps-bg"&gt;&lt;/div&gt;</pre>
 
-    <h2 class="item-title">.ps-bg<small>Just for experience</small></h2>
-    <div class="box ps-bg"></div>
-    <pre>&lt;div class="ps-bg"&gt;&lt;/div&gt;</pre>
+        <h2 class="item-title">.ant-line<small>Just for experience</small></h2>
+        <div class="box ant-line"></div>
+        <pre>&lt;div class="ant-line"&gt;&lt;/div&gt;</pre>
 
-    <h2 class="item-title">.ant-line<small>Just for experience</small></h2>
-    <div class="box ant-line"></div>
-    <pre>&lt;div class="ant-line"&gt;&lt;/div&gt;</pre>
-
-    <h2 class="item-title">sub, sup</h2>
-    <p class="subp">
-      English<sub>en</sub><!--
-      -->English<sup>en</sup><!--
+        <h2 class="item-title">sub, sup</h2>
+        <p class="subp">
+            English<sub>en</sub>
+            <!--
+      -->English<sup>en</sup>
+            <!--
       -->English<sub>long text long text long text long text</sub>
-    </p><br>
-    <p class="subp">
-      123<sub>456</sub><!--
-      -->123<sup>456</sup><!--
+        </p><br>
+        <p class="subp">
+            123<sub>456</sub>
+            <!--
+      -->123<sup>456</sup>
+            <!--
       -->123<sub>3.1415926535897932384626433832795028841971</sub>
-    </p><br>
-    <p class="subp">
-      中文<sub>测试</sub><!--
-      -->中文<sup>测试</sup><!--
+        </p><br>
+        <p class="subp">
+            中文<sub>测试</sub>
+            <!--
+      -->中文<sup>测试</sup>
+            <!--
       -->中文<sub>长文本长文本长文本长文本长文本长文本长文本长文本</sub>
-    </p>
+        </p>
 
-    <!-- <h2 class="item-title">.row/.col-[1~24]/.span-[1~24]</h2>
+        <!-- <h2 class="item-title">.row/.col-[1~24]/.span-[1~24]</h2>
     <div class="row">
       <div class="col-6" v-for="(n, i) in 4" :key="i">col-6</div>
     </div>
@@ -205,43 +166,46 @@
       <div class="col-6 span-6">col-6 span-6</div>
     </div> -->
 
-    <h2 class="item-title">table</h2>
-    <table>
-      <tr>
-        <th>name</th>
-        <th>age</th>
-        <th>hash</th>
-      </tr>
-      <tr v-for="(n, i) in ['ming', 'hong', 'wang', 'li', 'lin', 'liu']" :key="i">
-        <td>xiao {{ n }}</td>
-        <td>{{ ~~(Math.random() * 10 + 10) }}</td>
-        <td>{{ md5(Math.random() * Date.now()) }}</td>
-      </tr>
-    </table>
+        <h2 class="item-title">table</h2>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>hash</th>
+            </tr>
+            <tr v-for="(n, i) in ['ming', 'hong', 'wang', 'li', 'lin', 'liu']" :key="i">
+                <td>xiao {{ n }}</td>
+                <td>{{ ~~(Math.random() * 10 + 10) }}</td>
+                <td>{{ md5(Math.random() * Date.now()) }}</td>
+            </tr>
+        </table>
 
-    <h2 class="item-title">kbd</h2>
-    <p>
-      Keyboard keys: <kbd v-for="(n, i) in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ[]{}:,./<>?1234567890`-=~!@#$%^&*()_+'" :key="i">{{ n }}</kbd>
-      <kbd>ctrl</kbd>
-      <kbd>shift</kbd>
-      <kbd>alt</kbd>
-    </p>
+        <h2 class="item-title">kbd</h2>
+        <p>
+            Keyboard keys: <kbd v-for="(n, i) in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ[]{}:,./<>?1234567890`-=~!@#$%^&*()_+'"
+                :key="i">{{ n }}</kbd>
+            <kbd>ctrl</kbd>
+            <kbd>shift</kbd>
+            <kbd>alt</kbd>
+        </p>
 
-  </main>
+    </main>
 
 </body>
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/less.js/4.1.1/less.min.js"></script>
 <script>
 /* global Vue md5 */
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  data () {
-    return {
-      md5
+    el: '#app',
+    data () {
+        return {
+            md5
+        }
     }
-  }
 })
 </script>
+
 </html>

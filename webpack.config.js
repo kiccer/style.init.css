@@ -1,55 +1,152 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-// const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 const path = require('path')
+const pathJoin = p => path.join(__dirname, p)
+// const pathResolve = p => path.resolve(__dirname, p)
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const devMode = process.env.NODE_ENV !== 'production'
+module.exports = (env, argv) => {
+    const config = {
+        development: {
+            plugins: [
+                new MiniCssExtractPlugin({
+                    filename: 'style.init.css'
+                })
+                // new OptimizeCssAssetsPlugin({
+                //     assetNameRegExp: /\.(sa|sc|c)ss$/g,
+                //     // cssProcessor: require('cssnano'),
+                //     cssProcessorPluginOptions: {
+                //         // preset: [
+                //         //     // 'default',
+                //         //     // {
+                //         //     //     discardComments: { removeAll: true }
+                //         //     // }
+                //         // ]
+                //     },
+                //     canPrint: true
+                // })
+            ]
+        },
 
-let webpackConfig = {
-  entry: {
-    'style.init': './src/style.init.scss'
-  },
-  output: {
-    // filename: './[name].css',
-    path: path.resolve(__dirname, 'dist')
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].min.css',
-      chunkFilename: '[id].css'
-    })
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          // process.env.NODE_ENV === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
-      }
-    ]
-  }
+        production: {
+            plugins: [
+                new MiniCssExtractPlugin({
+                    filename: 'style.init.min.css'
+                }),
+                new OptimizeCssAssetsPlugin({
+                    assetNameRegExp: /\.(sa|sc|c)ss$/g,
+                    // cssProcessor: require('cssnano'),
+                    cssProcessorPluginOptions: {
+                        preset: [
+                            'default',
+                            {
+                                discardComments: { removeAll: true }
+                            }
+                        ]
+                    },
+                    canPrint: true
+                })
+            ]
+        }
+    }[argv.mode]
+
+    return {
+        // mode: 'none',
+        entry: {
+            'style.init': pathJoin('src/index.js')
+        },
+        output: {
+            path: pathJoin('build')
+        },
+        // watch: true,
+        watchOptions: {
+            ignored: [
+                '**/node_modules',
+                'build',
+                '.vscode',
+                '.history'
+            ]
+        },
+        optimization: {
+            minimizer: [
+                // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+                // `...`,
+                new CssMinimizerPlugin()
+            ]
+        },
+        plugins: [
+            ...config.plugins
+            // new CleanWebpackPlugin(),
+            // new MiniCssExtractPlugin({
+            //     filename: 'style.init.css'
+            // }),
+            // new OptimizeCssAssetsPlugin({
+            //     assetNameRegExp: /\.(sa|sc|c)ss$/g,
+            //     // cssProcessor: require('cssnano'),
+            //     cssProcessorPluginOptions: {
+            //         preset: [
+            //             'default',
+            //             {
+            //                 discardComments: { removeAll: true }
+            //             }
+            //         ]
+            //     },
+            //     canPrint: true
+            // })
+        ],
+        module: {
+            rules: [
+                {
+                    test: /\.css$/i,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                postcssOptions: {
+                                    plugins: [
+                                        [
+                                            'postcss-preset-env',
+                                            {
+                                                // Options
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    test: /\.s[ac]ss$/i,
+                    use: [
+                        MiniCssExtractPlugin.loader,
+                        // Creates `style` nodes from JS strings
+                        // 'style-loader',
+                        // Translates CSS into CommonJS
+                        'css-loader',
+                        // Compiles Sass to CSS,
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                postcssOptions: {
+                                    plugins: [
+                                        [
+                                            'postcss-preset-env',
+                                            {
+                                                // Options
+                                            }
+                                        ]
+                                    ]
+                                }
+                            }
+                        },
+                        'sass-loader'
+                    ]
+                }
+            ]
+        }
+    }
 }
-
-!devMode && webpackConfig.plugins.push(
-  new OptimizeCSSAssetsPlugin({
-    // 默认是全部的CSS都压缩，该字段可以指定某些要处理的文件
-    assetNameRegExp: /\.(sa|sc|c)ss$/g,
-    // 指定一个优化css的处理器，默认cssnano
-    cssProcessor: require('cssnano'),
-    cssProcessorPluginOptions: {
-      preset: [ 'default', {
-        discardComments: { removeAll: true }, // 对注释的处理
-        normalizeUnicode: false // 建议false,否则在使用unicode-range的时候会产生乱码
-      }]
-    },
-    canPrint: true // 是否打印编译过程中的日志
-  })
-)
-
-module.exports = webpackConfig
