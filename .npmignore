@@ -1,0 +1,12 @@
+.history
+/build/style.init.js
+/node_modules/
+/docs/
+/src/
+.eslintignore
+.eslintrc.js
+.gitignore
+.npmignore
+index.html
+package-lock.json
+webpack.config.js

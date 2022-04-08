@@ -1,12 +1,9 @@
 {
     "name": "style.init.css",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "version_short": "2.0",
     "description": "Page style initialization, and make the style look more normal in some browsers.",
     "main": "./build/style.init.css",
-    "files": [
-        "./build/style.init.css"
-    ],
     "scripts": {
         "lite-server": "lite-server",
         "dev": "webpack --watch --mode=development",
@@ -27,6 +24,10 @@
         "normalize"
     ],
     "author": "kiccer<1072907338@qq.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kiccer/style.init.css.git"
+    },
     "license": "MIT",
     "devDependencies": {
         "clean-webpack-plugin": "^4.0.0-alpha.0",
