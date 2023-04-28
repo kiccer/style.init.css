@@ -1,7 +1,7 @@
 {
     "name": "style.init.css",
-    "version": "2.0.1",
-    "version_short": "2.0",
+    "version": "3.0.0",
+    "version_short": "3.0",
     "description": "Page style initialization, and make the style look more normal in some browsers.",
     "main": "./build/style.init.css",
     "scripts": {

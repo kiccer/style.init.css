@@ -1,6 +1,6 @@
-/*!******************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[0].use[2]!./node_modules/normalize.css/normalize.css ***!
-  \******************************************************************************************************************************************************************/
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/normalize.css/normalize.css ***!
+  \********************************************************************************************/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -88,8 +88,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -356,19 +355,7 @@ template {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*******************************************************************************************************************************************************************************/
 * {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  list-style-type: none;
-  text-decoration: none;
-  font: inherit;
-  line-height: inherit;
-  color: inherit;
-  background-color: transparent;
-  vertical-align: inherit;
-  text-align: inherit; }
+  box-sizing: border-box; }
 
 html {
   background-color: #fff;
@@ -390,45 +377,8 @@ body {
   body * {
     max-height: 999999999999px; }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  display: block;
-  font-weight: lighter; }
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0; }
-
-h2 {
-  font-size: 1.5em;
-  margin: 0.83em 0; }
-
-h3 {
-  font-size: 1.17em;
-  margin: 1em 0; }
-
-h4 {
-  font-size: 1em;
-  margin: 1.33em 0; }
-
-h5 {
-  font-size: 0.83em;
-  margin: 1.67em 0; }
-
-h6 {
-  font-size: 0.67em;
-  margin: 2.33em 0; }
-
 a {
-  color: inherit;
-  text-decoration: none;
-  background-color: transparent; }
-  a:hover {
-    text-decoration: underline; }
+  color: inherit; }
 
 code,
 kbd,
@@ -472,21 +422,28 @@ img {
   height: auto;
   border-style: none; }
 
+input:-webkit-autofill, input:-webkit-autofill:focus {
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s; }
+
 table {
   border-spacing: 0px 0px;
   width: 100%;
   text-align: center;
   vertical-align: middle;
   border-collapse: collapse; }
-  table th,
-  table td {
-    padding: 5px;
-    border: 1px solid #ccc; }
-  table th {
-    font-size: 16px;
-    font-weight: 700; }
-  table td {
-    text-align: center; }
+
+th,
+td {
+  padding: 5px;
+  border: 1px solid #ccc; }
+
+th {
+  font-size: 16px;
+  font-weight: 700; }
+
+td {
+  text-align: center; }
 
 .clear:after {
   display: block;
@@ -498,95 +455,43 @@ table {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.ellipsis-1 {
+[class*="ellipsis-multi"] {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 1.5; }
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+  -webkit-line-clamp: var(--line-clamp, 2); }
 
-.ellipsis-2 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-1 {
+  --line-clamp: 1; }
 
-.ellipsis-3 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-2 {
+  --line-clamp: 2; }
 
-.ellipsis-4 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-3 {
+  --line-clamp: 3; }
 
-.ellipsis-5 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-4 {
+  --line-clamp: 4; }
 
-.ellipsis-6 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-5 {
+  --line-clamp: 5; }
 
-.ellipsis-7 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-6 {
+  --line-clamp: 6; }
 
-.ellipsis-8 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-7 {
+  --line-clamp: 7; }
 
-.ellipsis-9 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-8 {
+  --line-clamp: 8; }
 
-.ellipsis-10 {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  line-height: 1.5; }
+.ellipsis-multi-9 {
+  --line-clamp: 9; }
 
-.ellipsis-1 {
-  -webkit-line-clamp: 1; }
-
-.ellipsis-2 {
-  -webkit-line-clamp: 2; }
-
-.ellipsis-3 {
-  -webkit-line-clamp: 3; }
-
-.ellipsis-4 {
-  -webkit-line-clamp: 4; }
-
-.ellipsis-5 {
-  -webkit-line-clamp: 5; }
-
-.ellipsis-6 {
-  -webkit-line-clamp: 6; }
-
-.ellipsis-7 {
-  -webkit-line-clamp: 7; }
-
-.ellipsis-8 {
-  -webkit-line-clamp: 8; }
-
-.ellipsis-9 {
-  -webkit-line-clamp: 9; }
-
-.ellipsis-10 {
-  -webkit-line-clamp: 10; }
+.ellipsis-multi-10 {
+  --line-clamp: 10; }
 
 .justify {
   text-align: justify;

@@ -88,22 +88,22 @@
         </p>
         <pre>&lt;p class="ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-        <h2 class="item-title">.ellipsis-1 ~ .ellipsis-10</h2>
-        <p v-for="(n, i) in 3" :key="'ellipsis_num' + i" class="p1" :class="['ellipsis-' + n]">
+        <h2 class="item-title">.ellipsis-multi-1 ~ .ellipsis-multi-10</h2>
+        <p v-for="(n, i) in 3" :key="'ellipsis_num' + i" class="p1" :class="['ellipsis-multi-' + n]">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit
             molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam
             accusantium officiis.
         </p>
         <pre v-for="(n, i) in 3"
-            :key="'ellipsis_num_pre' + i">&lt;p class="ellipsis-{{ n }}"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+            :key="'ellipsis_num_pre' + i">&lt;p class="ellipsis-multi-{{ n }}"&gt;lorem text.&lt;/p&gt; // set width.</pre>
 
-        <h2 class="item-title">.mult-ellipsis<small>not IE</small></h2>
+        <!-- <h2 class="item-title">.mult-ellipsis<small>not IE</small></h2>
         <p v-for="(n, i) in 4" :key="'b' + i" class="mult-ellipsis" :class="['p' + n]">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo voluptas cupiditate consectetur impedit
             molestias et, atque voluptatem, culpa commodi ipsa incidunt vel animi facere libero id quidem, quam
             accusantium officiis.
         </p>
-        <pre>&lt;p class="mult-ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre>
+        <pre>&lt;p class="mult-ellipsis"&gt;lorem text.&lt;/p&gt; // set width.</pre> -->
 
         <h2 class="item-title">.justify<small>In different browsers, it will show different effects.</small></h2>
         <div v-for="(n, i) in ['测试文本', 'English', '123456789']" :key="'c' + i">
@@ -166,7 +166,7 @@
       <div class="col-6 span-6">col-6 span-6</div>
     </div> -->
 
-        <h2 class="item-title">table</h2>
+        <!-- <h2 class="item-title">table</h2>
         <table>
             <tr>
                 <th>name</th>
@@ -178,7 +178,7 @@
                 <td>{{ ~~(Math.random() * 10 + 10) }}</td>
                 <td>{{ md5(Math.random() * Date.now()) }}</td>
             </tr>
-        </table>
+        </table> -->
 
         <h2 class="item-title">kbd</h2>
         <p>

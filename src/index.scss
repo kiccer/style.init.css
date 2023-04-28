@@ -1,23 +1,25 @@
 @charset "UTF-8";
+@import "normalize.css";
 
 // 所有元素初始化
 * {
-    border: 0;
-    margin: 0;
-    padding: 0;
+    // border: 0;
+    // margin: 0;
+    // padding: 0;
     box-sizing: border-box;
-    outline: none;
-    list-style-type: none;
-    text-decoration: none;
-    font: inherit;
-    line-height: inherit;
-    color: inherit;
-    background-color: transparent;
-    vertical-align: inherit;
-    text-align: inherit;
+    // outline: none;
+    // list-style-type: none;
+    // text-decoration: none;
+    // font: inherit;
+    // line-height: inherit;
+    // color: inherit;
+    // background-color: transparent;
+    // vertical-align: inherit;
+    // text-align: inherit;
 }
 
 html {
+    // 防止有些自带底色的浏览器 比如 steam 内置浏览器
     background-color: #fff;
     text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -41,63 +43,8 @@ body {
     }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    display: block;
-    font-weight: lighter;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin: 0.83em 0;
-}
-
-h3 {
-    font-size: 1.17em;
-    margin: 1em 0;
-}
-
-h4 {
-    font-size: 1em;
-    margin: 1.33em 0;
-}
-
-h5 {
-    font-size: 0.83em;
-    margin: 1.67em 0;
-}
-
-h6 {
-    font-size: 0.67em;
-    margin: 2.33em 0;
-}
-
-// hr {
-//     display: block;
-//     width: 100%;
-//     background-color: currentColor;
-//     margin: 10px auto;
-//     height: 1px;
-//     overflow: visible;
-// }
-
 a {
     color: inherit;
-    text-decoration: none;
-    background-color: transparent;
-
-    &:hover {
-        text-decoration: underline;
-    }
 }
 
 code,
@@ -153,27 +100,34 @@ img {
     border-style: none;
 }
 
+input {
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+        transition: background-color 600000s 0s, color 600000s 0s;
+    }
+}
+
 table {
     border-spacing: 0px 0px;
     width: 100%;
     text-align: center;
     vertical-align: middle;
     border-collapse: collapse;
+}
 
-    th,
-    td {
-        padding: 5px;
-        border: 1px solid #ccc;
-    }
+th,
+td {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
 
-    th {
-        font-size: 16px;
-        font-weight: 700;
-    }
+th {
+    font-size: 16px;
+    font-weight: 700;
+}
 
-    td {
-        text-align: center;
-    }
+td {
+    text-align: center;
 }
 
 // 清除浮动
@@ -190,21 +144,37 @@ table {
     white-space: nowrap;
 }
 
-// 为了压缩效果才写成这样。。
-// 支持多行省略
-@for $i from 1 through 10 {
-    .ellipsis-#{$i} {
-        // 只有 -webkit-box 有效，flex 无效
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        line-height: 1.5;
-    }
+// // 为了压缩效果才写成这样。。
+// // 支持多行省略
+// @for $i from 1 through 10 {
+//     .ellipsis-#{$i} {
+//         // 只有 -webkit-box 有效，flex 无效
+//         display: -webkit-box;
+//         -webkit-box-orient: vertical;
+//         overflow: hidden;
+//         line-height: 1.5;
+//     }
+// }
+
+// @for $i from 1 through 10 {
+//     .ellipsis-#{$i} {
+//         -webkit-line-clamp: #{$i};
+//     }
+// }
+
+// .ellipsis-multi {
+[class*="ellipsis-multi-"] {
+    // 只有 -webkit-box 有效，flex 无效
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+    -webkit-line-clamp: var(--line-clamp, 2);
 }
 
 @for $i from 1 through 10 {
-    .ellipsis-#{$i} {
-        -webkit-line-clamp: #{$i};
+    .ellipsis-multi-#{$i} {
+        --line-clamp: #{$i};
     }
 }
 
@@ -233,7 +203,7 @@ table {
 .ps-bg,
 .transparent-background-of-photoshop {
 	background: linear-gradient(to top right, #eee 25%, transparent 25%, transparent 75%, #eee 75%, #eee 100%),
-							linear-gradient(to top right, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+                linear-gradient(to top right, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
 	background-size: 20px 20px;
 	background-position: 0px 0px, 10px 10px;
 }
@@ -241,7 +211,7 @@ table {
 .ant-line {
 	border: 1px solid transparent;
 	background: linear-gradient(white,white) padding-box,
-							repeating-linear-gradient( -45deg, currentColor 0%, currentColor 25%, white 0%, white 50%) 0 / 8.4px 8.4px;
+                repeating-linear-gradient( -45deg, currentColor 0%, currentColor 25%, white 0%, white 50%) 0 / 8.4px 8.4px;
 	animation: antLine 0.5s linear infinite;
 }
 
